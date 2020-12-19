@@ -4,11 +4,13 @@ import { CssBaseline } from '../Matlib';
 import { AppTheme } from '../theme/App';
 import { AppDrawer } from '../nodes/Drawer';
 import { AppHeader } from '../nodes/Header';
+import { ScrollHandler } from './ScrollHandler';
 import { OopsSomethingWentWrong } from './Errors';
 import { Route, BrowserRouter as Router, Redirect } from 'react-router-dom';
 
 // IMPORT MODULES 
 import { IntroductionSection } from "../nodes/Modules/Documentation/Introduction";
+import { InstallationSection } from "../nodes/Modules/Documentation/Installation";
 
 // IMPORT STYLES
 import { Styles } from '../styles/Master';
@@ -18,42 +20,49 @@ const ComponentBody = props => {
       const styl = Styles();
       return (
             <Router>
-                  <div className={styl.root} >
-                        <CssBaseline />
-                        <AppHeader
-                              noIcons={false}
-                              theme={props.theme}
-                              config={props.config}
-                        />
-                        <AppDrawer
-                              theme={props.theme}
-                        />
-                        <div className={styl.playgroundMasterContainer}>
-                              <Route
-                                    exact
-                                    path="/Introduction"
-                                    component={() => <IntroductionSection theme={props.theme} />}
+                  <ScrollHandler>
+                        <div className={styl.root} >
+                              <CssBaseline />
+                              <AppHeader
+                                    noIcons={false}
+                                    theme={props.theme}
+                                    config={props.config}
                               />
-                              <Route
-                                    exact
-                                    path="/"
-                                    render={
-                                          () => <Redirect to="/Introduction" />
-                                    }
+                              <AppDrawer
+                                    theme={props.theme}
                               />
-                        </div>
-                        {
-                              !props.didSomethingWentWrong ?
-                                    <React.Fragment></React.Fragment>
-                                    :
-                                    <OopsSomethingWentWrong
-                                          details={props.errorDetails}
-                                          onReload={() => {
-                                                window.location.reload(true)
-                                          }}
+                              <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                    <Route
+                                          exact
+                                          path="/Introduction"
+                                          component={() => <IntroductionSection theme={props.theme} />}
                                     />
-                        }
-                  </div>
+                                    <Route
+                                          exact
+                                          path="/Installation"
+                                          component={() => <InstallationSection theme={props.theme} />}
+                                    />
+                                    <Route
+                                          exact
+                                          path="/"
+                                          render={
+                                                () => <Redirect to="/Introduction" />
+                                          }
+                                    />
+                              </div>
+                              {
+                                    !props.didSomethingWentWrong ?
+                                          <React.Fragment></React.Fragment>
+                                          :
+                                          <OopsSomethingWentWrong
+                                                details={props.errorDetails}
+                                                onReload={() => {
+                                                      window.location.reload(true)
+                                                }}
+                                          />
+                              }
+                        </div>
+                  </ScrollHandler>
             </Router>
       );
 }

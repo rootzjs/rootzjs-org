@@ -14,20 +14,22 @@ export const Component = ({
                                 className={styl.button}
                                 onClick={() => actions.GOTO_PREVIOUS(props)}
                                 style={{
+                                        alignItems: "flex-end",
                                         justifyContent: "flex-start",
                                         visibility: !!props.back ? "visible" : "hidden"
                                 }}
                         >
-                                <div>Jump To</div>
+                                <div className={styl.btnSubLabel} style={{  }}>Jump To</div>
                                 <div className={styl.btnContentWrapper}>
-                                        {props.back}
                                         <NavigateBeforeRounded />
+                                        {props.back}
                                 </div>
                         </div>
                         <div
                                 className={styl.button}
                                 onClick={() => actions.GOTO_NEXT(props)}
                                 style={{
+                                        alignItems: "flex-start",
                                         justifyContent: "flex-end",
                                         visibility: !!props.next ? "visible" : "hidden"
                                 }}

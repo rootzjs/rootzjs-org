@@ -13,7 +13,11 @@ export const Styles = makeStyles(theme => ({
                 "& li>p": {
                         marginTop: 20,
                         color: theme.text["00"],
-                }
+                },
+
+                "& ul > li": {
+                        color: theme.text["00"],
+                },
         },
         divider: {
                 flexShrink: 0,
