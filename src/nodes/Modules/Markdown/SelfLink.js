@@ -8,9 +8,9 @@ const [node, dispatchNode] = createNode("SelfLink", Component);
 node.useContract(
         "AppDrawer",
         "NAVIGATE_TO",
-        (state, [{ name, history, route }]) => {
-                history.push(route);
-                return { activeSection: name }
+        (state, [{ name, history, route, mask = false }]) => {
+                history.push(route.toLowerCase().replace(/ /g, "-"));
+                return { activeSection: mask || name }
         }
 )
 

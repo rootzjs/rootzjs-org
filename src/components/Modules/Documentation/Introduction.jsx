@@ -16,7 +16,7 @@ export const Component = ({
         return (
                 <div className={styl.root}>
                         <div className={styl.pageTitle}>Introduction</div>
-                        <Typography variant="body1" gutterBottom>Rootz JS is a state management tool for React apps.</Typography>
+                        <Typography variant="body1" gutterBottom>Rootz JS is a centralized state management tool for React apps.</Typography>
                         <Typography variant="body1" gutterBottom>It follows a  <Link name="structural-functional" url="https://en.wikipedia.org/wiki/Structural_functionalism" /> paradigm, which sees your application as a set of Nodes interconnected through definitive set of actions, defined during the application building process. Each action defines the change of state of the Node it is written within or written for. All the Nodes abide by these actions resulting into expected application's behaviour.</Typography>
                         <Typography variant="body1" gutterBottom>This makes it easy to manage the state of your application. Another way of looking at this is, it helps you manage the data you display and how you respond to user actions. It helps you to view your application state as a whole at any point during application run.</Typography>
                         <Typography variant="body1" gutterBottom>Rootz, helps you write applications with complete hold over its state. This makes it possible for you to monitor changes happening at each component level. </Typography>

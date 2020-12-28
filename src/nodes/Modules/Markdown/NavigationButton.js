@@ -9,7 +9,7 @@ node.useContract(
         "AppDrawer",
         "GOTO_NEXT",
         (state, [{ next, history }]) => {
-                history.push("/" + next);
+                history.push("/" + next.toLowerCase().replace(/ /g, "-"));
                 return { activeSection: next }
         }
 )
@@ -18,7 +18,7 @@ node.useContract(
         "AppDrawer",
         "GOTO_PREVIOUS",
         (state, [{ back, history }]) => {
-                history.push("/" + back);
+                history.push("/" + back.toLowerCase().replace(/ /g, "-"));
                 return { activeSection: back }
         }
 )

@@ -18,6 +18,13 @@ export const Styles = makeStyles(theme => ({
                 "& ul > li": {
                         color: theme.text["00"],
                 },
+
+                "& code": {
+                        borderRadius: 2,
+                        padding: "2px 7px",
+                        color: theme.text["00"],
+                        backgroundColor: theme.background[20]
+                }
         },
         divider: {
                 flexShrink: 0,
@@ -35,4 +42,16 @@ export const Styles = makeStyles(theme => ({
                 fontWeight: "bold",
                 color: theme.text[20],
         },
+        contentSubTitle: {
+                fontSize: 28,
+                marginTop: 40,
+                fontWeight: "bold",
+                color: theme.text[30],
+        },
+        codeHeadLabel: {
+                fontSize: 20,
+                marginTop: 40,
+                fontWeight: "bold",
+                color: theme.text[40],
+        }
 }));

@@ -9,8 +9,10 @@ import { OopsSomethingWentWrong } from './Errors';
 import { Route, BrowserRouter as Router, Redirect } from 'react-router-dom';
 
 // IMPORT MODULES 
+import { ComponentsSection } from "../nodes/Modules/Documentation/Components";
 import { IntroductionSection } from "../nodes/Modules/Documentation/Introduction";
 import { InstallationSection } from "../nodes/Modules/Documentation/Installation";
+import { ThinkingRootzSection } from "../nodes/Modules/Documentation/ThinkingRootz";
 
 // IMPORT STYLES
 import { Styles } from '../styles/Master';
@@ -34,19 +36,29 @@ const ComponentBody = props => {
                               <div id="masterPage" className={styl.playgroundMasterContainer}>
                                     <Route
                                           exact
-                                          path="/Introduction"
+                                          path="/thinking-rootz"
+                                          component={() => <ThinkingRootzSection theme={props.theme} />}
+                                    />
+                                    <Route
+                                          exact
+                                          path="/components"
+                                          component={() => <ComponentsSection theme={props.theme} />}
+                                    />
+                                    <Route
+                                          exact
+                                          path="/introduction"
                                           component={() => <IntroductionSection theme={props.theme} />}
                                     />
                                     <Route
                                           exact
-                                          path="/Installation"
+                                          path="/installation"
                                           component={() => <InstallationSection theme={props.theme} />}
                                     />
                                     <Route
                                           exact
                                           path="/"
                                           render={
-                                                () => <Redirect to="/Introduction" />
+                                                () => <Redirect to="/introduction" />
                                           }
                                     />
                               </div>

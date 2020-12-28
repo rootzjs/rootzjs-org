@@ -19,10 +19,13 @@ node.state({
                 {
                         id: "Concepts",
                         subSections: [
-                                "Nodes",
+                                "Components",
+                                "Node",
+                                "NodeProps",
                                 "State",
                                 "Actions",
                                 "Contract",
+                                "Profile"
                         ]
                 },
                 {
