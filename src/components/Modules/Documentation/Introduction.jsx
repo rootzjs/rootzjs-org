@@ -8,21 +8,22 @@ import { NavigationButton } from '../../../nodes/Modules/Markdown/NavigationButt
 import { Styles } from '../styles/Documentation';
 
 export const Component = ({
-        props
+        props,
+        profile
 }) => {
         const styl = Styles();
         const isLight = props.theme === "light";
 
         return (
                 <div className={styl.root}>
-                        <div className={styl.pageTitle}>Introduction</div>
-                        <Typography variant="body1" gutterBottom>Rootz JS is a centralized state management tool for React apps.</Typography>
-                        <Typography variant="body1" gutterBottom>It follows a  <Link name="structural-functional" url="https://en.wikipedia.org/wiki/Structural_functionalism" /> paradigm, which sees your application as a set of Nodes interconnected through definitive set of actions, defined during the application building process. Each action defines the change of state of the Node it is written within or written for. All the Nodes abide by these actions resulting into expected application's behaviour.</Typography>
-                        <Typography variant="body1" gutterBottom>This makes it easy to manage the state of your application. Another way of looking at this is, it helps you manage the data you display and how you respond to user actions. It helps you to view your application state as a whole at any point during application run.</Typography>
-                        <Typography variant="body1" gutterBottom>Rootz, helps you write applications with complete hold over its state. This makes it possible for you to monitor changes happening at each component level. </Typography>
-                        <Typography variant="body1" gutterBottom>Rootz is just over <Link name="2kb" url="https://www.npmjs.com/package/@rootzjs/core" />, including dependencies.</Typography>
+                        <div className={styl.pageTitle}>{profile.INTRO.title}</div>
+                        <Typography variant="body1" gutterBottom>{profile.INTRO.subText1}</Typography>
+                        <Typography variant="body1" gutterBottom>Rootz shadows most of the functionalities and provides access to only those which are required for handling the state. This makes it easier for the user to rapidly build complex applications with lesser Lines Of Code <i>(LOC)</i>. Rootz smartly skips the boilerplates code by predefining them during the creation of <SelfLink name="Nodes" route="/nodes" />, which otherwise the user may end up writing. This increases the LOC to the functionality ratio without compromising the code quality and complexity. </Typography>
+                        <Typography variant="body1" gutterBottom>It follows a  <Link name="structural-functional" url="https://en.wikipedia.org/wiki/Structural_functionalism" /> paradigm, which sees your application as a set of Nodes interconnected through definitive set of actions, defined during the application building process. Each action defines the change of state of the Node. All the Nodes abide by these actions resulting into expected application's behavior.</Typography>
+                        <Typography variant="body1" gutterBottom>This makes it easy to manage the state of your application. Rootz is just over <Link name="2kb" url="https://www.npmjs.com/package/@rootzjs/core" />, including dependencies. By this, it is not only light on your pocket, but also helps in solving application's structural complexities for maintaining state.</Typography>
+                        <Typography variant="body1" gutterBottom></Typography>
                         <div className={styl.contentTitle}>Create a React-Rootz App</div>
-                        <Typography variant="body1" gutterBottom>The recommeded way to use Rootz in a React application is by using the official <Link name="Rootz JS" url="https://github.com/rootzjs/cra-template-rootzjs" /> template for <Link name="create-react-app" url="https://github.com/facebook/create-react-app" />.</Typography>
+                        <Typography variant="body1" gutterBottom>The recommended way to use Rootz in a React application is by using the official <Link name="Rootz JS" url="https://github.com/rootzjs/cra-template-rootzjs" /> template for <Link name="create-react-app" url="https://github.com/facebook/create-react-app" />.</Typography>
                         <CodeBlock
                                 lang="git"
                                 isLight={isLight}
@@ -41,8 +42,8 @@ export const Component = ({
                                 codeString={yarAddRootzString}
                         />
                         <div className={styl.contentTitle}>Why Rootz?</div>
-                        <Typography variant="body1" gutterBottom>Rootz, provides a definitive structure to your application and its state, by which you achieve better lines of code (LOC) to behaviour ratio. This helps you to achieve expected behaviour of your application with minimal LOC. </Typography>
-                        <Typography variant="body1" gutterBottom>The behaviour of the application is contributed by the
+                        <Typography variant="body1" gutterBottom>Rootz, provides a definitive structure to your application and its state, by which you achieve better lines of code (LOC) to behavior ratio. This helps you to achieve expected behavior of your application with minimal LOC. </Typography>
+                        <Typography variant="body1" gutterBottom>The behavior of the application is contributed by the
                                 <SelfLink
                                         name="State"
                                         route="/state"
@@ -67,7 +68,7 @@ export const Component = ({
                                 </li>
                         </ul>
                         <Typography variant="body1" gutterBottom>Nevertheless Rootz can be used with any React Application, adopting any use cases. It not only manages the state but also helps in structuring the application for better long term maintainability and easy debugging. With just over 2KB (including dependencies) it contributes to benefit almost any application with performance constraints. </Typography>
-                        <NavigationButton 
+                        <NavigationButton
                                 back=""
                                 next="Installation"
                         />

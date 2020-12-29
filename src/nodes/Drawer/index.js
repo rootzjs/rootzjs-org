@@ -14,6 +14,7 @@ node.state({
                                 "Introduction",
                                 "Installation",
                                 "Thinking Rootz",
+                                "App Structure",
                         ]
                 },
                 {
@@ -32,7 +33,6 @@ node.state({
                         id: "Workbook",
                         subSections: [
                                 "Overview",
-                                "App Structure",
                                 "App Flow",
                                 "Go Async",
                                 "With Data",

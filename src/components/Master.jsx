@@ -9,9 +9,11 @@ import { OopsSomethingWentWrong } from './Errors';
 import { Route, BrowserRouter as Router, Redirect } from 'react-router-dom';
 
 // IMPORT MODULES 
+import { NodeSection } from '../nodes/Modules/Documentation/Node';
 import { ComponentsSection } from "../nodes/Modules/Documentation/Components";
 import { IntroductionSection } from "../nodes/Modules/Documentation/Introduction";
 import { InstallationSection } from "../nodes/Modules/Documentation/Installation";
+import { AppStructureSection } from "../nodes/Modules/Documentation/AppStructure";
 import { ThinkingRootzSection } from "../nodes/Modules/Documentation/ThinkingRootz";
 
 // IMPORT STYLES
@@ -34,6 +36,16 @@ const ComponentBody = props => {
                                     theme={props.theme}
                               />
                               <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                    <Route
+                                          exact
+                                          path="/node"
+                                          component={() => <NodeSection theme={props.theme} />}
+                                    />
+                                    <Route
+                                          exact
+                                          path="/app-structure"
+                                          component={() => <AppStructureSection theme={props.theme} />}
+                                    />
                                     <Route
                                           exact
                                           path="/thinking-rootz"

@@ -53,5 +53,8 @@ export const Styles = makeStyles(theme => ({
                 marginTop: 40,
                 fontWeight: "bold",
                 color: theme.text[40],
+        },
+        logo: {
+                width: "90vmin"
         }
 }));

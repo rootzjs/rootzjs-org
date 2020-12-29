@@ -1,5 +1,6 @@
 import { createNode } from '@rootzjs/core';
 import { Component } from '../components/Master';
+import { getLangSupport } from '../lang';
 
 const [node, dispatchNode] = createNode("AppMaster", Component);
 
@@ -20,5 +21,7 @@ node.useAction(
                 };
         }
 );
+
+node.setProfile({ ...getLangSupport("english") });
 
 export const Master = dispatchNode(node);

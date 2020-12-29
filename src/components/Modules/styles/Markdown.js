@@ -53,5 +53,8 @@ export const Styles = makeStyles(theme => ({
         },
         noteContent: {
                 color: theme.text[20]
+        },
+        embedCode: {
+                margin: "10px 0 25px"
         }
 }));
