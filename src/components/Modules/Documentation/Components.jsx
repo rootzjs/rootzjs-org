@@ -22,7 +22,7 @@ export const Component = ({
     return (
         <div className={styl.root}>
             <div className={styl.pageTitle}>Components</div>
-            <Typography variant="body1" gutterBottom>A component is the basic building block of any application. They can be created generically to extend its reusability. Components in Rootz handles the rendering part of the application. While the Node provides a character to a component making it dynamic in nature.</Typography>
+            <Typography variant="body1" gutterBottom>A component is the basic building block of any application. They can be created generically to extend its reusability. Components in React-Rootz app is a controlled component handling the rendering part of the application. While the Node provides a character to a component making it dynamic in nature.</Typography>
             <Typography variant="body1" gutterBottom>A component in Rootz can be a React class or a functional component with a pre-defined object passed as props, known as <SelfLink name="NodeProps" route="/nodeprops" />. The props object for the component is defined by Rootz and have properties which help in accessing the defined functionalities. </Typography>
             <Typography variant="body1" gutterBottom>Let's take a look at a simple functional component in a React-Rootz application.</Typography>
             <CodeBlock
@@ -30,7 +30,7 @@ export const Component = ({
                 isLight={isLight}
                 codeString={showMessageCode}
             />
-            <Typography variant="body1" gutterBottom>Components should solve a single purpose for what it is intended to solve. Adding conditional rendering complexities in an existing component makes it more error prone. </Typography>
+            <Typography variant="body1" gutterBottom>Components should solve a single purpose for what it is intended to solve. Adding conditional rendering complexities in an existing component makes it complex in terms of maintainability. </Typography>
             <Typography variant="body1" gutterBottom>Let's take a look at a simple class component in a React-Rootz application. </Typography>
             <CodeBlock
                 lang="javascript"

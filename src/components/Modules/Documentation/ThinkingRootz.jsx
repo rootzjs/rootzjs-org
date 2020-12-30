@@ -24,7 +24,11 @@ export const Component = ({
                 src={rootzAnatomy}
                 className={styl.logo}
             />
-            <Typography variant="body1" gutterBottom>These are the key elements which one needs to be aware of for understanding Rootz. Most of the boilerplate in Rootz is done by the Root Layer itself. Node controls the functionalities of the Component stored in Root. It directs the Component for its rendering outcome. Components are basically dumb in Rootz application. They normally behave the way Node directs them to. This way nature of the application is defined by how these Nodes interact with components. These interactions are carried out with Actions and Contract. They along with the state defines the nature of the Node which intern defines the behavior of the app.</Typography>
+            <Typography variant="body1" gutterBottom>These are the key elements which one needs to be aware of for understanding Rootz. Most of the boilerplate in Rootz is done by the Root Layer itself. Root layer consists of inbuilt functionalities which help generating actions and contract. These are then passed through the NodePorps for the components to access them. </Typography>
+            <Typography variant="body1" gutterBottom>Node controls the functionalities of the Component stored in Root. It directs the Component for its rendering outcome. Components are basically dumb in Rootz application. They normally behave the way Node directs them to. This way nature of the application is defined by how these Nodes interact with components. These interactions are carried out with Actions and Contract. They along with the state defines the nature of the Node which intern defines the behavior of the app.</Typography>
+            <NoteBlock 
+                content="Root layer is the internal part of the Rootz JS. Node and Component are the only user interactive layers."
+            />
             <div className={styl.contentSubTitle}>Node</div>
             <ul>
                 <li>
@@ -122,47 +126,3 @@ export const Component = ({
         </div>
     );
 }
-// rootz-app structure
-const appStructure = `src/
-    components/
-        AddTodo.jsx
-        TodoList.jsx
-        FilterTodo.jsx
-    nodes/
-        AddTodo.js
-        TodoList.js
-        FilterTodo.js`;
-
-const showMessageCode = `
-import React from 'react';
-
-const Component = ({
-    props,
-    state,
-    actions,
-    profile,
-}) => {
-	return (
-    	<React.Fragment>
-            <p>{state.message}</p>
-            <button onClick={actions.ADD_MESSAGE}>Add Message</button>
-        </React.Fragment>
-    )
-});
-`;
-
-const showMessageNode = `
-import { createNode } from '@rootzjs/core';
-import { Component } from '../components/showMessage';
-
-const [node, dispatchNode] = createNode("ShowMessage", Component);
-
-// define initial state of the node
-node.state({ message: "" });
-
-// create action for updating the state on btn click
-node.useAction("ADD_MESSAGE", { message: "Yay! I just created my first Action" });
-
-// dispatch Node with defined properties.
-export const ShowMessage = dispatchNode(node);
-`;

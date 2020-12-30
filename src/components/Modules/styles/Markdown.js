@@ -40,10 +40,11 @@ export const Styles = makeStyles(theme => ({
                 }
         },
         noteContainer: {
-                fontSize: 15,
+                fontSize: 17,
                 borderRadius: 3,
+                margin: "40px 0",
                 padding: "10px 20px",
-                borderLeft: `solid 5px #E4A800`,
+                borderLeft: `solid 7px #E4A800`,
                 backgroundColor: fade("#E4A800", 0.25),
         },
         noteLabel: {
