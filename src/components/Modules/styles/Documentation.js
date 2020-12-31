@@ -1,4 +1,4 @@
-import { makeStyles } from '../../../Matlib';
+import { fade, makeStyles } from '../../../Matlib';
 
 export const Styles = makeStyles(theme => ({
         root: {
@@ -7,6 +7,7 @@ export const Styles = makeStyles(theme => ({
 
                 "& > p": {
                         marginTop: 25,
+                        lineHeight: 1.75,
                         color: theme.text["00"],
                 },
 
@@ -23,7 +24,7 @@ export const Styles = makeStyles(theme => ({
                         borderRadius: 2,
                         padding: "2px 7px",
                         color: theme.text["00"],
-                        backgroundColor: theme.background[20]
+                        backgroundColor: fade("#E4A800", 0.25)
                 }
         },
         divider: {
@@ -41,6 +42,7 @@ export const Styles = makeStyles(theme => ({
                 marginTop: 40,
                 fontWeight: "bold",
                 color: theme.text[20],
+                borderBottom: `solid 2px ${theme.text[50]}`
         },
         contentSubTitle: {
                 fontSize: 28,
@@ -56,5 +58,10 @@ export const Styles = makeStyles(theme => ({
         },
         logo: {
                 width: "90vmin"
+        },
+        codeHeadIcon:{
+                fontSize: 22,
+                marginRight: 10,
+                color: "#E4A800"
         }
 }));

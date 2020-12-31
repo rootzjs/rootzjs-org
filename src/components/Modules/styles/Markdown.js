@@ -47,6 +47,22 @@ export const Styles = makeStyles(theme => ({
                 borderLeft: `solid 7px #E4A800`,
                 backgroundColor: fade("#E4A800", 0.25),
         },
+        noteContainerAttention: {
+                fontSize: 17,
+                borderRadius: 3,
+                margin: "40px 0",
+                padding: "10px 20px",
+                borderLeft: `solid 7px #E44100`,
+                backgroundColor: fade("#E44100", 0.25),
+        },
+        noteContainerInfo: {
+                fontSize: 17,
+                borderRadius: 3,
+                margin: "40px 0",
+                padding: "10px 20px",
+                borderLeft: `solid 7px #00BDE4`,
+                backgroundColor: fade("#00BDE4", 0.25),
+        },
         noteLabel: {
                 marginRight: 7,
                 fontWeight: "bold",

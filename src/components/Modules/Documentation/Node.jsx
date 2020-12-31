@@ -1,6 +1,5 @@
 import React from 'react';
 import { Typography } from '../../../Matlib';
-import { Link } from '../Markdown/ExternalLink';
 import { CodeBlock } from '../Markdown/CodeBlock';
 import { NoteBlock } from '../Markdown/NoteBlock';
 import { EmbedSandbox } from '../Markdown/EmbedCode';
@@ -35,7 +34,7 @@ export const Component = ({
             <NoteBlock content="The above example assumes the Node and Components are decoupled into separate files." />
             <div className={styl.codeHeadLabel}>Try it out...</div>
             <EmbedSandbox iFrame={embedComponentExample} />
-            <div className={styl.contentTitle}>Creating a Node</div>
+            <div className={styl.contentTitle}>Create a Node</div>
             <Typography variant="body1" gutterBottom>To create a node you should be aware of the certain concepts which are mentioned in details along with their syntax below. By the end of this section one should be in a state to create a simple React-Rootz app to update a message. You can refer to the working example mentioned above.</Typography>
             <div className={styl.contentSubTitle}>createNode</div>
             <Typography variant="body1" gutterBottom>The <code>createNode</code> method creates an instance of the Node. It accepts a unique Id <code>NODE_ID</code> of type string followed by a Component <i>(React.Component / React.FC)</i>. In return it provides an array of 2 <code>{`createNode: (NODE_ID: string, Component: Function) => [node: Node, (node: Node) => React.PureComponent]`}</code>, the instance of Node class at 0th index followed by the dispatch functionality at the 1st index.</Typography>

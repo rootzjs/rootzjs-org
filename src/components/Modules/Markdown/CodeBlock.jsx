@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTheme, fade } from '../../../Matlib';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { PrismAsync as SyntaxHighlighter } from 'react-syntax-highlighter';
 import coldDarkTheme from 'react-syntax-highlighter/dist/esm/styles/prism/coldark-dark';
 import coldLightTheme from 'react-syntax-highlighter/dist/esm/styles/prism/coldark-cold';
 

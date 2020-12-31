@@ -1,6 +1,5 @@
 import React from 'react';
 import { Typography } from '../../../Matlib';
-import { CodeBlock } from '../Markdown/CodeBlock';
 import { NoteBlock } from '../Markdown/NoteBlock';
 import { SelfLink } from '../../../nodes/Modules/Markdown/SelfLink';
 import { NavigationButton } from '../../../nodes/Modules/Markdown/NavigationButton';
@@ -12,7 +11,6 @@ export const Component = ({
     props
 }) => {
     const styl = Styles();
-    const isLight = props.theme === "light";
 
     return (
         <div className={styl.root}>
@@ -29,6 +27,7 @@ export const Component = ({
             <NoteBlock 
                 content="Root layer is the internal part of the Rootz JS. Node and Component are the only user interactive layers."
             />
+            <div className={styl.contentTitle}>Core Elements</div>
             <div className={styl.contentSubTitle}>Node</div>
             <ul>
                 <li>
