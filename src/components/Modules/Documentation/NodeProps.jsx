@@ -90,7 +90,6 @@ export const Component = ({
                 type="info"
                 content={`actions are static, as they are initialized only once and are not changed during the application run. But other properties including props, state and profile may change. Actions can be assigned to a scope variable inside constructor to be accessed globally through a single property "this.actions" in this case.`}
             />
-            <Typography variant="body1" gutterBottom>.</Typography>
             <Typography variant="body1" gutterBottom>The coming sections provide detail descriptions of each properties of NodeProps. Starting from State.</Typography>
             <NavigationButton
                 back="Node"

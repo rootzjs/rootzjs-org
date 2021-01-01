@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography } from '../../../Matlib';
 import { CodeBlock } from '../Markdown/CodeBlock';
+import { NoteBlock } from '../Markdown/NoteBlock';
 import { SelfLink } from '../../../nodes/Modules/Markdown/SelfLink';
 import { NavigationButton } from '../../../nodes/Modules/Markdown/NavigationButton';
 
@@ -16,6 +17,7 @@ export const Component = ({
         <div className={styl.root}>
             <div className={styl.pageTitle}>State</div>
             <Typography variant="body1" gutterBottom>State are simple JavaScript objects. In a React-Rootz app state are centrally stored and maintained within the <SelfLink name="State Container" route="/thinking-rootz" masek="Thinking Rootz " />. As other propperties of <SelfLink name="NodeProps" route="/nodeprops"  />, <code>state</code> too is initialized within a Node. Initializing a state can be done through <code>node.state()</code>.</Typography>
+            <NoteBlock content="This provides you a perception of creating state for individual Nodes like in flux architechture, but is rather stored and managed centrally. This provides user to focus on defining the state of individual Nodes at a time, based on its own contribution to the application's behavior. And in case of debugging it makes it easy for the user to identify the change in state of a Node than rectifying the entire application." type="info"/>
             <div className={styl.contentTitle}>State Container</div>
             <Typography variant="body1" gutterBottom>State Container is where the entire state of the application is stored and maintained. Users can view the current state of the application at any time by accessing the state container Object. This Object is <code>read-only</code> in nature. The state container object can be accessed by <code>getAllNodes</code> method.</Typography>
             <div className={styl.contentSubTitle}>Using <code>getAllNodes</code></div>
@@ -32,7 +34,7 @@ export const Component = ({
                 isLight={isLight}
                 codeString={stateContainerStructure}
             />
-            <div className={styl.contentTitle}>Initializing State</div>
+            <div className={styl.contentTitle}>Define State</div>
             <Typography variant="body1" gutterBottom>State should only be created using <code>node.state()</code> method. A valid state should always be a JavaScript object.</Typography>
             <CodeBlock 
                 lang="javascript"
@@ -125,25 +127,23 @@ const useActionWithCallback = `
 node.state({
     todos: [
         {
-            id: 1001,
             completed: false,
-            name: "Learning Rootz Js"
+            name: "Learning Rootz JS"
 
         },
         {
-            id: 1002,
             completed: false,
             name: "Create a React-Rootz App"
         }
     ]
 });
 
-// updating todo of id-1001 as completed
+// updating todo of name "Learning Rootz Js" as completed
 node.useAction(
     "ON_UPDATE", 
     (state, args) => {
         const todos = state.todos.map(todo => {
-            if(todo.id === 1001) {
+            if(todo.name === "Learning Rootz JS") {
                 return { ...todo, isCompleted: true }
             } else {
                 return todo
