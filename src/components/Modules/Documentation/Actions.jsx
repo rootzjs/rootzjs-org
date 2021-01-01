@@ -52,7 +52,39 @@ export const Component = ({
             <Typography variant="body1" gutterBottom>In the above example <code>state</code> is predefined as the first argument variable. While the parameters sent would result as an constructed array in the second argument, <code>TodoName</code>. This provides </Typography>
             <NoteBlock content="state, represents the current state of the Node. For example if the state of the Node is updated earlier, you would get the updated state as the argument."/>
             <div className={styl.contentTitle}>Create Async Actions</div>
-            
+            <Typography variant="body1" gutterBottom>In scenarios where <SelfLink name="async state update" route="/go-async" mask="Go Async"/> is required, the procedure in creating an action would remain the same. The only change required would be during its call. In such scenario the action would be called inside the promise.</Typography>
+            <Typography variant="body1" gutterBottom>Let's take an example of async state update.</Typography>
+            <div className={styl.codeHeadLabel}>components/AddTodoAsync.js</div>
+            <CodeBlock
+                lang="javascript"
+                isLight={isLight}
+                codeString={asyncAddTodoComponent}
+            />
+            <Typography variant="body1" gutterBottom>Here the format of creating and calling an action remains the same. Only for async state update, actions are called within a promise. </Typography>
+            <div className={styl.codeHeadLabel}>nodes/AddTodoAsync.jsx</div>
+            <CodeBlock
+                lang="javascript"
+                isLight={isLight}
+                codeString={asyncAddTodoNode}
+            />
+            <Typography variant="body1" gutterBottom>In this case the <code>Actions</code> are kept pure, letting the component decide which action to be called on success / failure. There is another way you could approach the same problem by adding an API call within an action itself. <b>Actions with Async dependency</b>.</Typography>
+            <div className={styl.contentSubTitle}>Actions with <code>Async Dependency</code></div>
+            <Typography variant="body1" gutterBottom>This freedom of updating logic within an action, lets us write more <b>expressive async functions</b>. Where adding the API requests within an action <b>inverts the control from component to node</b>. This results in <b>call and forget</b> nature for a component. In this case the component wouldn't have to worry about it state update, the action would take care of it.</Typography>
+            <NoteBlock content="It not only shifts the dependency on Node but also handle success / failure within the same action. This helps you to add specific behavior when you update the state." />
+            <NoteBlock content="Either of this approach will provide same result. We still recommend you to use the later one for moving its dependency from the component. As all of its dependencies are handled by the node." type="info"/>
+            <Typography variant="body1" gutterBottom>Let's take the same example to understand this.</Typography>
+            <div className={styl.codeHeadLabel}>components/AddTodoAsync.js</div>
+            <CodeBlock
+                lang="javascript"
+                isLight={isLight}
+                codeString={asyncAddTodoComponent2}
+            />
+            <div className={styl.codeHeadLabel}>nodes/AddTodoAsync.jsx</div>
+            <CodeBlock
+                lang="javascript"
+                isLight={isLight}
+                codeString={asyncAddTodoNode2}
+            />
             <NavigationButton
                 back="NodeProps"
                 next="Actions"
@@ -88,4 +120,93 @@ const actionCreate = `
 node.useAction("ADD_TODO", { 
     name: "Learn Rootz JS", completed: false 
 }); 
+`;
+
+const asyncAddTodoComponent = `
+export const Component = (nodeProps) => {
+    const { state, actions } = nodeProps;
+
+    React.useEffect(() => {
+        fetch("http://mockapi.com/todoapp/todos")
+            .then(
+                resp => actions.ADD_TODO(resp.data),
+                err => actions.ERROR_FETCHING_TODOS(err)
+            );
+    }, [actions]);
+
+    if(state.hasErrorFetchingTodos) {
+        return <p>error fetching Todos...</p>
+    } else {
+        return { 
+            /* CODE_FOR_DISPLAYING_TODOS */ 
+        }
+    }
+}
+`;
+
+const asyncAddTodoNode = `
+node.state({ 
+    todos: [],
+    hasErrorFetchingTodos: false
+});
+
+// existingTodos would be fetched through API
+node.useAction("ADD_TODO", (state, [existingTodos]) => {
+    return {
+        todos: [
+            ...state.todos,
+            ...existingTodos
+        ]
+    }
+});
+
+// error fetching todos from API
+node.useAction("ERROR_FETCHING_TODOS", { 
+    hasErrorFetchingTodos: true 
+});
+`;
+
+const asyncAddTodoComponent2 = `
+export const Component = (nodeProps) => {
+    const { state, actions } = nodeProps;
+
+    React.useEffect(() => {
+        actions.FETCH_TODOS();
+    }, [actions]);
+
+    if(state.hasErrorFetchingTodos) {
+        return <p>error fetching Todos...</p>
+    } else {
+        return { 
+            /* CODE_FOR_DISPLAYING_TODOS */ 
+        }
+    }
+}
+`;
+
+const asyncAddTodoNode2 = `
+node.state({ 
+    todos: [],
+    hasErrorFetchingTodos: false
+});
+
+// here the action decides what to be done on success / failure
+node.useAction("FETCH_TODOS", (state, args) => {
+    fetch("http://mockapi.com/todoapp/todos")
+        .then(
+            resp => { 
+                return { 
+                    todos: [
+                        ...state.todos,
+                        ...resp.data
+                    ]
+                }
+            },
+            err => {
+                return {
+                    hasErrorFetchingTodos: true
+                }
+            }
+        );
+});
 `;
