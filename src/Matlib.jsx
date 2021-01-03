@@ -32,6 +32,7 @@ export {
 } from '@material-ui/core/styles';
 
 export {
+        LinkRounded,
         MenuRounded,
         CloseRounded,
         Brightness7Rounded,

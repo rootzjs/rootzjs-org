@@ -4,7 +4,6 @@ import { CssBaseline } from '../Matlib';
 import { AppTheme } from '../theme/App';
 import { AppDrawer } from '../nodes/Drawer';
 import { AppHeader } from '../nodes/Header';
-import { ScrollHandler } from './ScrollHandler';
 import { OopsSomethingWentWrong } from './Errors';
 import { Route, BrowserRouter as Router, Redirect } from 'react-router-dom';
 
@@ -12,6 +11,7 @@ import { Route, BrowserRouter as Router, Redirect } from 'react-router-dom';
 import { NodeSection } from '../nodes/Modules/Documentation/Node';
 import { StateSection } from '../nodes/Modules/Documentation/State';
 import { ActionsSection } from '../nodes/Modules/Documentation/Actions';
+import { ContractSection } from '../nodes/Modules/Documentation/Contract';
 import { NodePropsSection } from '../nodes/Modules/Documentation/NodeProps';
 import { ComponentsSection } from "../nodes/Modules/Documentation/Components";
 import { IntroductionSection } from "../nodes/Modules/Documentation/Introduction";
@@ -27,84 +27,87 @@ const ComponentBody = props => {
       const styl = Styles();
       return (
             <Router>
-                  <ScrollHandler>
-                        <div className={styl.root} >
-                              <CssBaseline />
-                              <AppHeader
-                                    noIcons={false}
-                                    theme={props.theme}
-                                    config={props.config}
+                  <div className={styl.root} >
+                        <CssBaseline />
+                        <AppHeader
+                              noIcons={false}
+                              theme={props.theme}
+                              config={props.config}
+                        />
+                        <AppDrawer
+                              theme={props.theme}
+                        />
+                        <div id="masterPage" className={styl.playgroundMasterContainer}>
+                              <Route
+                                    exact
+                                    path="/contract"
+                                    component={() => <ContractSection theme={props.theme} />}
                               />
-                              <AppDrawer
-                                    theme={props.theme}
+                              <Route
+                                    exact
+                                    path="/actions"
+                                    component={() => <ActionsSection theme={props.theme} />}
                               />
-                              <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                    <Route
-                                          exact
-                                          path="/actions"
-                                          component={() => <ActionsSection theme={props.theme} />}
-                                    />
-                                    <Route
-                                          exact
-                                          path="/state"
-                                          component={() => <StateSection theme={props.theme} />}
-                                    />
-                                    <Route
-                                          exact
-                                          path="/nodeprops"
-                                          component={() => <NodePropsSection theme={props.theme} />}
-                                    />
-                                    <Route
-                                          exact
-                                          path="/node"
-                                          component={() => <NodeSection theme={props.theme} />}
-                                    />
-                                    <Route
-                                          exact
-                                          path="/app-structure"
-                                          component={() => <AppStructureSection theme={props.theme} />}
-                                    />
-                                    <Route
-                                          exact
-                                          path="/thinking-rootz"
-                                          component={() => <ThinkingRootzSection theme={props.theme} />}
-                                    />
-                                    <Route
-                                          exact
-                                          path="/components"
-                                          component={() => <ComponentsSection theme={props.theme} />}
-                                    />
-                                    <Route
-                                          exact
-                                          path="/introduction"
-                                          component={() => <IntroductionSection theme={props.theme} />}
-                                    />
-                                    <Route
-                                          exact
-                                          path="/installation"
-                                          component={() => <InstallationSection theme={props.theme} />}
-                                    />
-                                    <Route
-                                          exact
-                                          path="/"
-                                          render={
-                                                () => <Redirect to="/introduction" />
-                                          }
-                                    />
-                              </div>
-                              {
-                                    !props.didSomethingWentWrong ?
-                                          <React.Fragment></React.Fragment>
-                                          :
-                                          <OopsSomethingWentWrong
-                                                details={props.errorDetails}
-                                                onReload={() => {
-                                                      window.location.reload(true)
-                                                }}
-                                          />
-                              }
+                              <Route
+                                    exact
+                                    path="/state"
+                                    component={() => <StateSection theme={props.theme} />}
+                              />
+                              <Route
+                                    exact
+                                    path="/nodeprops"
+                                    component={() => <NodePropsSection theme={props.theme} />}
+                              />
+                              <Route
+                                    exact
+                                    path="/node"
+                                    component={() => <NodeSection theme={props.theme} />}
+                              />
+                              <Route
+                                    exact
+                                    path="/app-structure"
+                                    component={() => <AppStructureSection theme={props.theme} />}
+                              />
+                              <Route
+                                    exact
+                                    path="/thinking-rootz"
+                                    component={() => <ThinkingRootzSection theme={props.theme} />}
+                              />
+                              <Route
+                                    exact
+                                    path="/components"
+                                    component={() => <ComponentsSection theme={props.theme} />}
+                              />
+                              <Route
+                                    exact
+                                    path="/introduction"
+                                    component={() => <IntroductionSection theme={props.theme} />}
+                              />
+                              <Route
+                                    exact
+                                    path="/installation"
+                                    component={() => <InstallationSection theme={props.theme} />}
+                              />
+                              <Route
+                                    exact
+                                    path="/"
+                                    render={
+                                          () => <Redirect to="/introduction" />
+                                    }
+                              />
                         </div>
-                  </ScrollHandler>
+                        {
+                              !props.didSomethingWentWrong ?
+                                    <React.Fragment></React.Fragment>
+                                    :
+                                    <OopsSomethingWentWrong
+                                          details={props.errorDetails}
+                                          onReload={() => {
+                                                window.location.reload(true)
+                                          }}
+                                    />
+                        }
+                  </div>
             </Router>
       );
 }

@@ -3,9 +3,10 @@ import { withRouter } from 'react-router-dom';
 
 class ScrollHandlerComponent extends React.Component {
         componentDidUpdate(prevProps) {
-                if (this.props.location !== prevProps.location) {
-                        document.getElementById("masterPage").scrollTo(0, 0);
-                }
+                // have implemented haslinks for external and internal links
+                // if (this.props.location !== prevProps.location) {
+                //         document.getElementById("masterPage").scrollTo(0, 0);
+                // }
         }
 
         render() {

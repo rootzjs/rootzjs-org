@@ -4,6 +4,7 @@ import { CodeBlock } from '../Markdown/CodeBlock';
 import { NoteBlock } from '../Markdown/NoteBlock';
 import { EmbedSandbox } from '../Markdown/EmbedCode';
 import { SelfLink } from '../../../nodes/Modules/Markdown/SelfLink';
+import { HashLink } from '../../../nodes/Modules/Markdown/HashLink';
 import { NavigationButton } from '../../../nodes/Modules/Markdown/NavigationButton';
 
 import { Styles } from '../styles/Documentation';
@@ -22,31 +23,31 @@ export const Component = ({
 
     return (
         <div className={styl.root}>
-            <div className={styl.pageTitle}>NodeProps</div>
+            <div id="nodeprops" className={styl.pageTitle}>NodeProps</div>
             <Typography variant="body1" gutterBottom><b>NodeProps</b> is an Object passed as an argument to the <SelfLink name="Components" route="/components" />. It provides access to the methods defined in Node. There are four properties of NodeProps object. <code>state</code>, <code>props</code>, <code>actions</code> and <code>profile</code>.</Typography>
-            <div className={styl.contentTitle}>Properties</div>
-            <div className={styl.contentSubTitle}>props</div>
+            <HashLink id="properties" className={styl.contentTitle}>Properties</HashLink>
+            <HashLink id="properties-props" className={styl.contentSubTitle}>props</HashLink>
             <Typography variant="body1" gutterBottom><b>Props</b> are arguments passed by the Components as parameters.</Typography>
-            <div className={styl.contentSubTitle}>state</div>
+            <HashLink id="properties-state" className={styl.contentSubTitle}>state</HashLink>
             <Typography variant="body1" gutterBottom><b>State</b> defined in Node is passed as a parameter to NodeProps. Internally its a part of the <SelfLink name="State Container" route="/thinking-rootz" mask="Thinking Rootz" />.</Typography>
-            <div className={styl.contentSubTitle}>actions</div>
+            <HashLink id="properties-actions" className={styl.contentSubTitle}>actions</HashLink>
             <Typography variant="body1" gutterBottom><b>Actions and Contracts</b> are defined within a Node using <code>ACTION_IDs</code>. <SelfLink name="Action / Contract Generators" route="/thinking-rootz" mask="Thinking Rootz" /> in the Root Layer, is basically a factory for generating functions based on the arguments. These functions are mapped as values to their respective <code>ACTION_IDs</code> as keys, of the <b>actions</b> object.</Typography>
             <NoteBlock content="Actions and Contracts both are mapped to actions property of NodeProps." />
-            <div className={styl.contentSubTitle}>profile</div>
+            <HashLink id="properties-proflie" className={styl.contentSubTitle}>profile</HashLink>
             <Typography variant="body1" gutterBottom><b>Profile</b> is basically a derivative of the concept of Bus in networking. You can also relate them to <b>context</b> in React. They can be set through any Nodes via <code>node.setProfile</code>or through the <code>setProfile</code> method imported from the <b>Rootz Js library</b>.</Typography>
             <Typography variant="body1" gutterBottom>Let's consider an example of an React-Rootz app for displaying message through NodeProps, as props, through state, actions and contract.</Typography>
             <div className={styl.codeHeadLabel}>Try it out...</div>
             <EmbedSandbox iFrame={embededNodePropsExample} />
-            <div className={styl.contentTitle}>Accessing NodeProps</div>
+            <HashLink id="accessing-nodeprops" className={styl.contentTitle}>Accessing NodeProps</HashLink>
             <Typography variant="body1" gutterBottom><b>NodeProps</b> defined in class and functional components have slight difference in syntax.</Typography>
-            <div className={styl.contentSubTitle}>NodeProps in Functional Component</div>
+            <HashLink id="nodeprops-in-functional-component" className={styl.contentSubTitle}>NodeProps in Functional Component</HashLink>
             <Typography variant="body1" gutterBottom>NodeProps in a functional component is an Object passed a parameter, which can be destructured into the required properties used within the component. </Typography>
             <CodeBlock
                 lang="javascript"
                 isLight={isLight}
                 codeString={showMessageCode}
             />
-            <div className={styl.contentSubTitle}>NodeProps in Class Component</div>
+            <HashLink id="nodeprops-in-a-class-component" className={styl.contentSubTitle}>NodeProps in Class Component</HashLink>
             <Typography variant="body1" gutterBottom>While in a class component it can be destructured inside the <code>render</code> lifecycle for better accessibility. </Typography>
             <CodeBlock
                 lang="javascript"
@@ -54,7 +55,7 @@ export const Component = ({
                 codeString={showMessageClassCode}
             />
             <Typography variant="body1" gutterBottom>NodeProps are fully compatible to use along with React hooks and other functionalities. </Typography>
-            <div className={styl.contentSubTitle}>NodeProps with <code>useEffect</code></div>
+            <HashLink id="nodeprops-with-useeffect" className={styl.contentSubTitle}>NodeProps with <code>useEffect</code></HashLink>
             <Typography variant="body1" gutterBottom>Consider a scenario you would want to access the NodeProps from within <code>useEffect</code> hook.</Typography>
             <CodeBlock
                 lang="javascript"
@@ -62,14 +63,14 @@ export const Component = ({
                 codeString={showMessageUseEffect}
             />
             <Typography variant="body1" gutterBottom>Accessing any NodeProps from within <code>useEffect</code> would be similar to accessing it from other part of the components.</Typography>
-            <div className={styl.contentSubTitle}>Composing Components with NodeProps</div>
+            <HashLink id="composing-components-with-nodeprops" className={styl.contentSubTitle}>Composing Components with NodeProps</HashLink>
             <Typography variant="body1" gutterBottom> NodeProps can also be accessed from outside the component. But for such scenarios you would need to pass it as a parameter. Consider this example where actions are to be called from another function which resides outside component scope <i>(Composing Components)</i>.</Typography>
             <CodeBlock
                 lang="javascript"
                 isLight={isLight}
                 codeString={showMessageFromComposingComponent}
             />
-            <div className={styl.contentSubTitle}>NodeProps with component lifecycle methods</div>
+            <HashLink id="nodeprops-with-component-lifecycle-methods" className={styl.contentSubTitle}>NodeProps with component lifecycle methods</HashLink>
             <Typography variant="body1" gutterBottom>Accessing any NodeProps from within class lifecycle is similar to accessing it within hooks or other functions in react. Considering an example with the same will give you a brief idea about the same.</Typography>
             <CodeBlock
                 lang="javascript"

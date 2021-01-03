@@ -3,6 +3,7 @@ import { Typography } from '../../../Matlib';
 import { Link } from '../Markdown/ExternalLink';
 import { CodeBlock } from '../Markdown/CodeBlock';
 import { NoteBlock } from '../Markdown/NoteBlock';
+import { HashLink } from '../../../nodes/Modules/Markdown/HashLink';
 import { NavigationButton } from '../../../nodes/Modules/Markdown/NavigationButton';
 
 import { Styles } from '../styles/Documentation';
@@ -15,7 +16,7 @@ export const Component = ({
 
         return (
                 <div className={styl.root}>
-                        <div className={styl.pageTitle}>Installation</div>
+                        <div id="installation" className={styl.pageTitle}>Installation</div>
                         <Typography variant="body1" gutterBottom>React-Rootz applications can be created by using the official <Link name="Rootz JS" url="https://github.com/rootzjs/cra-template-rootzjs" /> template for <Link name="create-react-app" url="https://github.com/facebook/create-react-app" />. This is the recommended way to use Rootz in React applications. As this takes the advantage of Rootz integration with React components.</Typography>
                         <CodeBlock
                                 lang="git"
@@ -34,7 +35,7 @@ export const Component = ({
                                 isLight={isLight}
                                 codeString={yarAddRootzString}
                         />
-                        <div className={styl.contentTitle}>Post Installation</div>
+                        <HashLink id="post-installation" className={styl.contentTitle}>Post Installation</HashLink>
                         <Typography variant="body1" gutterBottom>Once the React-Rootz application is installed, run command:</Typography>
                         <CodeBlock
                                 lang="git"

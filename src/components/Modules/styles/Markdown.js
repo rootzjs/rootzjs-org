@@ -71,7 +71,38 @@ export const Styles = makeStyles(theme => ({
         noteContent: {
                 color: theme.text[20]
         },
+        noteContentLink: {
+                display: "block",
+                margin: "25px 0 15px",
+
+                "& li": {
+                        margin: 10
+                }
+        },
         embedCode: {
                 margin: "10px 0 25px"
+        },
+        hasLinkContainer: {
+                marginTop: 40,
+                display: "flex",
+                alignItems: "center",
+
+                "& a": {
+                        flex: 1,
+                        display: "flex",
+                },
+                "&:hover svg": {
+                        display: "inline-flex"
+                }
+
+
+        },
+        hashLinkIcon: {
+                display: "none",
+                margin: "0 10px",
+                fontSize: "3vmin",
+                position: "relative",
+                marginLeft: "calc(-3vmin - 10px)",
+                color: theme.palette.secondary.main,
         }
 }));

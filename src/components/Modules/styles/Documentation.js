@@ -36,25 +36,27 @@ export const Styles = makeStyles(theme => ({
                 fontWeight: "bold",
                 margin: "25px 0 15px",
                 color: theme.text[20],
+                textDecoration: "auto",
         },
         contentTitle: {
                 fontSize: 35,
-                marginTop: 40,
                 fontWeight: "bold",
                 color: theme.text[20],
+                textDecoration: "auto",
                 borderBottom: `solid 2px ${theme.text[50]}`
         },
         contentSubTitle: {
                 fontSize: 28,
-                marginTop: 40,
                 fontWeight: "bold",
                 color: theme.text[30],
+                textDecoration: "auto",
         },
         codeHeadLabel: {
                 fontSize: 20,
                 marginTop: 40,
                 fontWeight: "bold",
                 color: theme.text[40],
+                textDecoration: "auto",
         },
         logo: {
                 width: "90vmin"

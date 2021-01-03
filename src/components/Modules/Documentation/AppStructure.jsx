@@ -3,6 +3,7 @@ import { Typography } from '../../../Matlib';
 import { CodeBlock } from '../Markdown/CodeBlock';
 import { NoteBlock } from '../Markdown/NoteBlock';
 import { SelfLink } from '../../../nodes/Modules/Markdown/SelfLink';
+import { HashLink } from '../../../nodes/Modules/Markdown/HashLink';
 import { NavigationButton } from '../../../nodes/Modules/Markdown/NavigationButton';
 
 import { Styles } from '../styles/Documentation';
@@ -15,14 +16,14 @@ export const Component = ({
 
     return (
         <div className={styl.root}>
-            <div className={styl.pageTitle}>Structuring a Rootz App</div>
+            <div id="structuring-a-rootz-app" className={styl.pageTitle}>Structuring a Rootz App</div>
             <Typography variant="body1" gutterBottom>The essential requirement when it comes to the Rootz app is how to structure it with Rootz configuration. There is no single answer to it. We recommend to follow the below structure, although Rootz provides freedom to experiment with suitable structure for your application.</Typography>
             <CodeBlock
                 lang="text"
                 isLight={isLight}
                 codeString={appStructure}
             />
-            <div className={styl.contentSubTitle}>Nodes and Components</div>
+            <HashLink id="nodes-and-components" className={styl.contentSubTitle}>Nodes and Components</HashLink>
             <Typography variant="body1" gutterBottom>Rootz segregates the functionalities for managing state from a React component. A component is the basic building block of any application. Thus the components can be created generically to extend its reusability. Components in Rootz handles the rendering part of the application. While the Node provides a character to a component making it dynamic in nature. </Typography>
             <Typography variant="body1" gutterBottom>Let's take an example of a simple component.</Typography>
             <div className={styl.codeHeadLabel}>Message.jsx</div>
@@ -40,7 +41,7 @@ export const Component = ({
                 isLight={isLight}
                 codeString={showMessageCode}
             />
-            <Typography variant="body1" gutterBottom>In the above example the component is a react component with pre-defined props. These props are known as <SelfLink name="NodeProps" route="/nodeprops" />. NodeProps helps in accessing the functionalities defined within a Node. The state and the actions used within the <b>ShowMessage.jsx</b> component is defined in its Node.</Typography>
+            <Typography variant="body1" gutterBottom>In the above example the component is a react component with pre-defined props. These props are known as <SelfLink name="NodeProps" route="/nodeprops" id="properties" />. NodeProps helps in accessing the functionalities defined within a Node. The state and the actions used within the <b>ShowMessage.jsx</b> component is defined in its Node.</Typography>
             <Typography variant="body1" gutterBottom>Let's take a look at the corresponding Node for <b>ShowMessage.jsx</b> component.</Typography>
             <div className={styl.codeHeadLabel}>node/Message.js</div>
             <CodeBlock
@@ -56,9 +57,10 @@ export const Component = ({
                     mask="Overview"
                     name="Workbook"
                     route="/overview"
+                    id=""
                 />
                 section.
-                You can refer <SelfLink name="Actions" route="/actions" /> and <SelfLink name="State" route="State" /> sections to know more about them.
+                You can refer <SelfLink name="Actions" route="/actions" id="" /> and <SelfLink name="State" route="State" id="" /> sections to know more about them.
             </Typography>
             <NavigationButton
                 back="Thinking Rootz"

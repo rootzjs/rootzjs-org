@@ -2,11 +2,11 @@
     "todos": [
         {
             "completed": "false",
-            "name": "Learning Rootz JS",
+            "name": "Learning Rootz JS"
         },
         {
             "completed": "false",
-            "name": "Create a React-Rootz App",
+            "name": "Create a React-Rootz App"
         }
     ]
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { Styles } from '../styles/Markdown';
 
 // Notes
-export const NoteBlock = ({ content, type = "note" }) => {
+export const NoteBlock = ({ content, type = "note", children }) => {
         const styl = Styles();
         switch (type) {
                 case "note": {
@@ -10,6 +10,10 @@ export const NoteBlock = ({ content, type = "note" }) => {
                                 <div className={styl.noteContainer}>
                                         <span className={styl.noteLabel}>Note:</span>
                                         <span className={styl.noteContent}>{content}</span>
+                                        {
+                                                children &&
+                                                (<span className={styl.noteContentLink}>{children}</span>)
+                                        }
                                 </div>
                         )
                 }
@@ -18,6 +22,10 @@ export const NoteBlock = ({ content, type = "note" }) => {
                                 <div className={styl.noteContainerAttention}>
                                         <span className={styl.noteLabel}>Attention:</span>
                                         <span className={styl.noteContent}>{content}</span>
+                                        {
+                                                children &&
+                                                (<span className={styl.noteContentLink}>{children}</span>)
+                                        }
                                 </div>
                         )
                 }
@@ -26,6 +34,10 @@ export const NoteBlock = ({ content, type = "note" }) => {
                                 <div className={styl.noteContainerInfo}>
                                         <span className={styl.noteLabel}>Info:</span>
                                         <span className={styl.noteContent}>{content}</span>
+                                        {
+                                                children &&
+                                                (<span className={styl.noteContentLink}>{children}</span>)
+                                        }
                                 </div>
                         )
                 }
@@ -34,6 +46,10 @@ export const NoteBlock = ({ content, type = "note" }) => {
                                 <div className={styl.noteContainer}>
                                         <span className={styl.noteLabel}>Note:</span>
                                         <span className={styl.noteContent}>{content}</span>
+                                        {
+                                                children &&
+                                                (<span className={styl.noteContentLink}>{children}</span>)
+                                        }
                                 </div>
                         )
                 }
