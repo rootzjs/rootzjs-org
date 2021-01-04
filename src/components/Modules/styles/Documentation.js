@@ -61,9 +61,17 @@ export const Styles = makeStyles(theme => ({
         logo: {
                 width: "90vmin"
         },
-        codeHeadIcon:{
+        logoContract: {
+                height: "45vmin" 
+        },
+        codeHeadIcon: {
                 fontSize: 22,
                 marginRight: 10,
                 color: "#E4A800"
+        },
+        imgWrapper: {
+                display: "flex",
+                justifyContent: "center",
+                backgroundColor: theme.background[10]
         }
 }));

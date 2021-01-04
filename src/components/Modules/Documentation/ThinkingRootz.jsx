@@ -4,9 +4,9 @@ import { NoteBlock } from '../Markdown/NoteBlock';
 import { SelfLink } from '../../../nodes/Modules/Markdown/SelfLink';
 import { HashLink } from '../../../nodes/Modules/Markdown/HashLink';
 import { NavigationButton } from '../../../nodes/Modules/Markdown/NavigationButton';
+import rootzAnatomy from '../../../assets/images/rootz-anatomy.svg';
 
 import { Styles } from '../styles/Documentation';
-import rootzAnatomy from '../../../assets/images/rootz-anatomy.svg';
 
 export const Component = ({
     props
