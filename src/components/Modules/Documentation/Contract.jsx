@@ -52,7 +52,7 @@ sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-ori
                 />
             </div>
             <Typography variant="body1" gutterBottom>How about keeping the the state and most importantly its update logic at their respective component level. And finding an alternative to update the state of one component from another. Without letting you disturb the location of defining the state and its logic. With this approach the state can now be defined within its component's scope. This keeps the descriptive nature of the component while <b>reducing the burden on a single component handling different states</b> and most importantly <b>avoiding redundant renderings</b>.</Typography>
-            <HashLink id="defining-a-contract" className={styl.contentSubTitle}>Defining a contract</HashLink>
+            <HashLink id="defining-a-contract" className={styl.contentSubTitle}>Having a contract</HashLink>
             <div className={styl.imgWrapper}>
                 <img
                     alt="logo"

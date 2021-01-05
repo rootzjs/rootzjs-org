@@ -8,6 +8,7 @@ import { OopsSomethingWentWrong } from './Errors';
 import { Route, BrowserRouter as Router, Redirect } from 'react-router-dom';
 
 // IMPORT MODULES 
+import { SplashPage } from '../nodes/Splash';
 import { NodeSection } from '../nodes/Modules/Documentation/Node';
 import { StateSection } from '../nodes/Modules/Documentation/State';
 import { ActionsSection } from '../nodes/Modules/Documentation/Actions';
@@ -23,7 +24,6 @@ import { ThinkingRootzSection } from "../nodes/Modules/Documentation/ThinkingRoo
 // IMPORT STYLES
 import { Styles } from '../styles/Master';
 
-
 const ComponentBody = props => {
       const styl = Styles();
       return (
@@ -35,9 +35,7 @@ const ComponentBody = props => {
                               theme={props.theme}
                               config={props.config}
                         />
-                        <AppDrawer
-                              theme={props.theme}
-                        />
+                        <AppDrawer theme={props.theme} />
                         <div id="masterPage" className={styl.playgroundMasterContainer}>
                               <Route
                                     exact
@@ -97,9 +95,7 @@ const ComponentBody = props => {
                               <Route
                                     exact
                                     path="/"
-                                    render={
-                                          () => <Redirect to="/introduction" />
-                                    }
+                                    component={() => <SplashPage theme={props.theme} />}
                               />
                         </div>
                         {
