@@ -11,6 +11,7 @@ import { Route, BrowserRouter as Router, Redirect } from 'react-router-dom';
 import { NodeSection } from '../nodes/Modules/Documentation/Node';
 import { StateSection } from '../nodes/Modules/Documentation/State';
 import { ActionsSection } from '../nodes/Modules/Documentation/Actions';
+import { ProfileSection } from '../nodes/Modules/Documentation/Profile';
 import { ContractSection } from '../nodes/Modules/Documentation/Contract';
 import { NodePropsSection } from '../nodes/Modules/Documentation/NodeProps';
 import { ComponentsSection } from "../nodes/Modules/Documentation/Components";
@@ -38,6 +39,11 @@ const ComponentBody = props => {
                               theme={props.theme}
                         />
                         <div id="masterPage" className={styl.playgroundMasterContainer}>
+                              <Route
+                                    exact
+                                    path="/profile"
+                                    component={() => <ProfileSection theme={props.theme} />}
+                              />
                               <Route
                                     exact
                                     path="/contract"

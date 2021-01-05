@@ -9,13 +9,31 @@ import { NavigationButton } from '../../../nodes/Modules/Markdown/NavigationButt
 import React_Todo from '../../../assets/images/react-todo.svg';
 import Rootz_Todo from '../../../assets/images/rootz-todo.svg';
 import { Styles } from '../styles/Documentation';
+import { EmbedSandbox } from '../Markdown/EmbedCode';
 
 export const Component = ({
     props,
 }) => {
     const styl = Styles();
     const isLight = props.theme === "light";
-
+    const addTodoAppExample = `<iframe src="https://codesandbox.io/embed/bold-lamarr-jtj48?fontsize=14&hidenavigation=1&theme=${props.theme}"
+    style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+    title="rootzjs-simple-todo-app"
+    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+  ></iframe>`;
+    const addTodoExampleAsync = `<iframe src="https://codesandbox.io/embed/solitary-glitter-7y83n?fontsize=14&hidenavigation=1&module=%2Fsrc%2Fnodes%2FFetchTodo.js&theme=${props.theme}"
+  style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+  title="rootzjs-create-async-contract"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>`;
+    const avoidCyclicDependency = `<iframe src="https://codesandbox.io/embed/rootzjs-cyclic-dependecy-solution-2dbjn?fontsize=14&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FNode1.jsx&theme=${props.theme}"
+style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+title="rootzjs-cyclic-dependecy-solution"
+allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>`;
     return (
         <div className={styl.root}>
             <div id="actions" className={styl.pageTitle}>Contract</div>
@@ -84,9 +102,38 @@ export const Component = ({
                 isLight={isLight}
                 codeString={contractCreateCallback}
             />
+            <div className={styl.codeHeadLabel}>Try it out...</div>
+            <EmbedSandbox iFrame={addTodoAppExample} />
             <NoteBlock content='The "state" argument of contract ADD_TODO, represents the current state of "TodoList". A Contract lets you access the state of the Node you are updating.' />
             <HashLink id="create-async-contract" className={styl.contentTitle}>Create Async Contract</HashLink>
-            <Typography variant="body1" gutterBottom>As we have already discussed the advantages of taking the <SelfLink name="async await approach over fetch chaining" route="/actions" mask="Actions" id="actions-with-async-dependencies"/> and would be following the same, for the example coming ahead.</Typography>
+            <Typography variant="body1" gutterBottom>As we have already discussed the advantages of taking the <SelfLink name="async await approach over fetch chaining" route="/actions" mask="Actions" id="actions-with-async-dependencies" /> and would be following the same, for examples coming ahead.</Typography>
+            <Typography variant="body1" gutterBottom>Let's consider the same example of adding a todo. But this time we would fetch the todos through an API.</Typography>
+            <div className={styl.codeHeadLabel}>nodes/TodoListAsync.js</div>
+            <CodeBlock
+                lang="javascript"
+                isLight={isLight}
+                codeString={todoListAsync}
+            />
+            <div className={styl.codeHeadLabel}>nodes/FetchTodo.js</div>
+            <CodeBlock
+                lang="javascript"
+                isLight={isLight}
+                codeString={contractCreateCallbackAsync}
+            />
+            <div className={styl.codeHeadLabel}>components/FetchTodo.jsx</div>
+            <CodeBlock
+                lang="javascript"
+                isLight={isLight}
+                codeString={contractComponentAsync}
+            />
+            <Typography variant="body1" gutterBottom>The <code>FETCH_TODOS</code> is a contract with an async callback which handles the state update based on the response. When compared to the traditional approach of updating the state of the parent, this provides a <b>call and forget</b> approach for the contractor i.e the <b>FetchTodo</b> Node as well the contractee, <b>TodoList</b>. Let's take an working example of a Todo App fetching and displaying the list of Todos with async logic.</Typography>
+            <div className={styl.codeHeadLabel}>Try it out...</div>
+            <EmbedSandbox iFrame={addTodoExampleAsync} />
+            <HashLink id="cyclic-dependency" className={styl.contentSubTitle}>Cyclic Dependency</HashLink>
+            <Typography variant="body1" gutterBottom><b>Cyclic Dependency</b> are scenarios where a contractor is also a contractee. That is one Node updating another, which intern updates the same Node creating a cyclic dependency calls. This is basically a common scenario which can occur in any application.</Typography>
+            <Typography variant="body1" gutterBottom>This can be easily solved by <code>React.useRef</code> hook. Let's consider an example.</Typography>
+            <div className={styl.codeHeadLabel}>Try it out...</div>
+            <EmbedSandbox iFrame={avoidCyclicDependency} />
             <NavigationButton
                 back="Actions"
                 next="Profile"
@@ -157,4 +204,59 @@ node.state({
 });
 
 export const TodoList = dispatchNode(node);
+`;
+
+const todoListAsync = `
+import { createNode } from "@rootzjs/core";
+import { Component } from "../components/TodoList";
+
+const [node, dispatchNode] = createNode("TodoList", Component);
+
+node.state({
+    todos: []
+});
+
+export const TodoList = dispatchNode(node);
+`;
+
+const contractCreateCallbackAsync = ` 
+import { createNode } from "@rootzjs/core";
+import { Component } from "../components/AddTodo";
+
+const [node, dispatchNode] = createNode("AddTodo", Component);
+
+//** here the state param represents the current state of todoList
+node.useContract("TodoList", "FETCH_TODOS", async (state, args) => {
+    try {
+        const resp = await fetch("http://mockapi.com/todoapp/todos");
+        const data = await resp.json();
+        return { 
+            todos: [
+                ...state.todos,
+                ...data.todos
+            ]
+        }
+    } catch {
+        return {
+            hasErrorFetchingTodos: true
+        }
+    }
+});
+
+export const AddTodo = dispatchNode(node);
+`;
+
+
+const contractComponentAsync = `
+let inputRef = null;
+
+const Component = ({ actions }) => {
+    return (
+        <div>
+            <button onClick={actions.FETCH_TODOS}>
+                Fetch Todo
+            </button>
+        </div>
+    )
+}
 `;

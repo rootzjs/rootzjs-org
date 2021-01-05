@@ -14,7 +14,7 @@ export const Component = ({
 }) => {
     const styl = Styles();
     const isLight = props.theme === "light";
-    const embededNodePropsExample = `<iframe src="https://codesandbox.io/embed/rootzjs-concept-example2-w7cbs?fontsize=14&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FMaster.jsx&theme=${isLight}"
+    const embededNodePropsExample = `<iframe src="https://codesandbox.io/embed/rootzjs-concept-example2-w7cbs?fontsize=14&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FMaster.jsx&theme=${props.theme}"
     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
     title="rootzjs-concept-example2"
     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
@@ -33,7 +33,7 @@ export const Component = ({
             <HashLink id="properties-actions" className={styl.contentSubTitle}>actions</HashLink>
             <Typography variant="body1" gutterBottom><b>Actions and Contracts</b> are defined within a Node using <code>ACTION_IDs</code>. <SelfLink name="Action / Contract Generators" route="/thinking-rootz" mask="Thinking Rootz" /> in the Root Layer, is basically a factory for generating functions based on the arguments. These functions are mapped as values to their respective <code>ACTION_IDs</code> as keys, of the <b>actions</b> object.</Typography>
             <NoteBlock content="Actions and Contracts both are mapped to actions property of NodeProps." />
-            <HashLink id="properties-proflie" className={styl.contentSubTitle}>profile</HashLink>
+            <HashLink id="properties-profile" className={styl.contentSubTitle}>profile</HashLink>
             <Typography variant="body1" gutterBottom><b>Profile</b> is basically a derivative of the concept of Bus in networking. You can also relate them to <b>context</b> in React. They can be set through any Nodes via <code>node.setProfile</code>or through the <code>setProfile</code> method imported from the <b>Rootz Js library</b>.</Typography>
             <Typography variant="body1" gutterBottom>Let's consider an example of an React-Rootz app for displaying message through NodeProps, as props, through state, actions and contract.</Typography>
             <div className={styl.codeHeadLabel}>Try it out...</div>

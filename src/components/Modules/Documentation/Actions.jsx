@@ -8,13 +8,19 @@ import { SelfLink } from '../../../nodes/Modules/Markdown/SelfLink';
 import { NavigationButton } from '../../../nodes/Modules/Markdown/NavigationButton';
 
 import { Styles } from '../styles/Documentation';
+import { EmbedSandbox } from '../Markdown/EmbedCode';
 
 export const Component = ({
     props
 }) => {
     const styl = Styles();
     const isLight = props.theme === "light";
-
+    const asynActionsCodesandbox = `<iframe src="https://codesandbox.io/embed/rootzjs-async-actions-60hqe?fontsize=14&hidenavigation=1&module=%2Fsrc%2Fnodes%2FTodoAsync.js&theme=${props.theme}"
+    style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+    title="rootzjs-async-actions"
+    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+  ></iframe>`;
     return (
         <div className={styl.root}>
             <div id="actions" className={styl.pageTitle}>Actions</div>
@@ -82,18 +88,20 @@ export const Component = ({
             <Typography variant="body1" gutterBottom>This freedom of updating logic within an action, lets us write more <b>expressive async functions</b>. Where adding the API requests within an action <b>inverts the control from component to node</b>. This results in <b>call and forget</b> nature for a component. In this case the component wouldn't have to worry about it state update, the action would take care of it.</Typography>
             <NoteBlock content="Either of this approach will provide same result. We still recommend you to use the later one for moving its dependency from the component. As all of its dependencies are handled by the node." type="info" />
             <Typography variant="body1" gutterBottom>Let's take the same example to understand this.</Typography>
-            <div className={styl.codeHeadLabel}>components/AddTodoAsync.js</div>
+            <div className={styl.codeHeadLabel}>components/TodoAsync.js</div>
             <CodeBlock
                 lang="javascript"
                 isLight={isLight}
                 codeString={asyncAddTodoComponent2}
             />
-            <div className={styl.codeHeadLabel}>nodes/AddTodoAsync.jsx</div>
+            <div className={styl.codeHeadLabel}>nodes/TodoAsync.jsx</div>
             <CodeBlock
                 lang="javascript"
                 isLight={isLight}
                 codeString={asyncAddTodoNode2}
             />
+            <div className={styl.codeHeadLabel}>Try it out...</div>
+            <EmbedSandbox iFrame={asynActionsCodesandbox} />
             <Typography variant="body1" gutterBottom>It not only shifts the dependency on Node but also handle success / failure within the same action. This helps you to add specific behavior when you update the state.</Typography>
             <Typography variant="body1" gutterBottom>This is much less typing! You can still use a <code>.then()</code> <b>chaining</b> over <code>async await</code>. The later makes the code more readable, maintainable and easier to understand and test. It's purely a personal choice.</Typography>
 
