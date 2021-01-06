@@ -11,4 +11,4 @@ node.useContract(
         { isMenuOpen: true, }
 );
 
-export const MobileToolbar = dispatchNode(node);
+export default dispatchNode(node);

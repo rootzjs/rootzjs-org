@@ -5,4 +5,4 @@ import { Component } from '../../../components/Modules/Documentation/AppStructur
 
 const [node, dispatchNode] = createNode("AppStructureSection", Component);
 
-export const AppStructureSection = withRouter(dispatchNode(node));
+export default withRouter(dispatchNode(node));

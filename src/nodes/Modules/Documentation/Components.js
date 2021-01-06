@@ -5,4 +5,4 @@ import { Component } from '../../../components/Modules/Documentation/Components'
 
 const [node, dispatchNode] = createNode("ComponentsSection", Component);
 
-export const ComponentsSection = withRouter(dispatchNode(node));
+export default withRouter(dispatchNode(node));

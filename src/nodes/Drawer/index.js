@@ -33,16 +33,14 @@ node.state({
                         id: "Workbook",
                         subSections: [
                                 "Overview",
-                                "App Flow",
-                                "Go Async",
-                                "With Data",
-                                "Performance"
+                                // "App Flow",
+                                // "Go Async",
+                                // "With Data",
+                                // "Performance"
                         ]
                 },
         ],
         comminSoon: [
-                "Impact",
-                "Timelines"
         ],
 });
 
@@ -56,6 +54,12 @@ node.useAction(
 node.useAction(
         "ON_MENU_CLOSE",
         { isMenuOpen: false }
+);
+
+// on route correction
+node.useAction(
+        "ROUTE_CORRECTION",
+        (state, [activeSection]) => ({ activeSection })
 );
 
 export const AppDrawer = withRouter(dispatchNode(node));

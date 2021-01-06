@@ -4,4 +4,4 @@ import { Component } from '../../../components/Modules/Documentation/Profile';
 
 const [node, dispatchNode] = createNode("ProfileSection", Component);
 
-export const ProfileSection = dispatchNode(node);
+export default dispatchNode(node);

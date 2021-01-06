@@ -18,6 +18,7 @@ export {
         ListItemText,
         ListSubheader,
         SwipeableDrawer,
+        FormControlLabel,
 
 } from '@material-ui/core';
 

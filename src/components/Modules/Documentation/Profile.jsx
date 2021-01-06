@@ -66,9 +66,6 @@ export const Component = ({
             <NoteBlock content="Avoid setting profiles from within the component body. As nodes are accessed before the components, they would not be available in the NodeProps." type="attention" />
             <HashLink id="avoid-setting-in-component" className={styl.contentSubTitle}>Avoid setting inside component</HashLink>
             <EmbedSandbox iFrame={accessProfileFromLibInsideComp} />
-
-            <div className={styl.contentTitle}>We are working on a Workbook</div>
-            <NoteBlock content="To check out all the concepts working together providing an outcome, we are working on projects to explain more on these concepts with complex examples. Our Workbook will shortly be released where we would be discussing these concepts during creation of a complex project. Of course not a Todo App ;)" type="info" />
             <NavigationButton
                 back="State"
                 next=""

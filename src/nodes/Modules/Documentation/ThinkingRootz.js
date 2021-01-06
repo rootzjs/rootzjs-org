@@ -4,4 +4,4 @@ import { Component } from '../../../components/Modules/Documentation/ThinkingRoo
 
 const [node, dispatchNode] = createNode("ThinkingRootzSection", Component);
 
-export const ThinkingRootzSection = withRouter(dispatchNode(node));
+export default withRouter(dispatchNode(node));

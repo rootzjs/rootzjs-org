@@ -1,10 +1,10 @@
 import React from 'react';
-import { DrawerSections } from '../../nodes/Drawer/Sections';
 import {
         Divider,
         IconButton,
         CloseRounded,
 } from '../../Matlib';
+import DrawerSections from '../../nodes/Drawer/Sections';
 
 // styles 
 import { Styles } from "../../styles/AppDrawer";

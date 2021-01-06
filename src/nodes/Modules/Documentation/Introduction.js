@@ -4,4 +4,4 @@ import { Component } from '../../../components/Modules/Documentation/Introductio
 
 const [node, dispatchNode] = createNode("IntroductionSection", Component);
 
-export const IntroductionSection = withRouter(dispatchNode(node));
+export default withRouter(dispatchNode(node));

@@ -4,4 +4,4 @@ import { Component } from '../../../components/Modules/Documentation/Installatio
 
 const [node, dispatchNode] = createNode("InstallationSection", Component);
 
-export const InstallationSection = withRouter(dispatchNode(node));
+export default withRouter(dispatchNode(node));

@@ -10,4 +10,4 @@ node.useContract(
         { isMenuOpen: false, }
 );
 
-export const MobileSection = dispatchNode(node);
+export default dispatchNode(node);

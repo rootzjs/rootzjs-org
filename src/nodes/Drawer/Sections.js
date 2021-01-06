@@ -16,4 +16,4 @@ node.useContract(
         }
 );
 
-export const DrawerSections = dispatchNode(node);
+export default dispatchNode(node);

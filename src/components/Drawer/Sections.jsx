@@ -14,7 +14,7 @@ export const Component = ({
       actions
 }) => {
       const styl = Styles();
-
+      
       return (
             <React.Fragment>
                   <div className={styl.drawerBody}>
@@ -41,7 +41,7 @@ export const Component = ({
                                                                   key={text + index}
                                                                   disabled={isComingSoon}
                                                                   onClick={() => actions.ON_SECTION_CLICK(text, props.history)}
-                                                                  className={`${styl.listItem} ${props.activeSection === text && styl.activeSection}`}
+                                                                  className={`${styl.listItem} ${props.activeSection.toLowerCase() === text.toLowerCase() && styl.activeSection}`}
                                                             >
                                                                   <ListItemText
                                                                         className={styl.sectionText}

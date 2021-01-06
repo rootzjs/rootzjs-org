@@ -5,11 +5,11 @@ import {
     SwipeableDrawer,
 } from '../../Matlib';
 
-import { DrawerSections } from '../../nodes/Drawer/Sections';
-import { MobileSection } from '../../nodes/Drawer/MobileSection';
-
 // styles
 import { Styles } from '../../styles/AppDrawer';
+
+const DrawerSections = React.lazy(() => import('../../nodes/Drawer/Sections'));
+const MobileSection = React.lazy(() => import('../../nodes/Drawer/MobileSection'));
 
 export const Component = ({
     props,
@@ -21,7 +21,22 @@ export const Component = ({
     const isLight = props.theme === "light";
     const isSplashPage = props.history.location.pathname === "/";
 
-    if (isSplashPage) { 
+    React.useLayoutEffect(() => {
+        const pathSection = props.history.location.pathname
+            .replace(/\//g, "")
+            .replace(/-/g, " ")
+            .toLowerCase();
+        const needsRouteCorrection = pathSection !== state.activeSection.toLowerCase();
+        if (needsRouteCorrection) {
+            actions.ROUTE_CORRECTION(pathSection);
+        }
+    }, [
+        actions,
+        state.activeSection,
+        props.history.location.pathname,
+    ]);
+
+    if (isSplashPage) {
         return <React.Fragment></React.Fragment>
     }
     else {
@@ -36,11 +51,13 @@ export const Component = ({
                             onClose={actions.ON_MENU_CLOSE}
                             classes={{ paper: styl.drawerPaperMobile }}
                         >
-                            <MobileSection
-                                history={props.history}
-                                isLight={isLight}
-                                {...state}
-                            />
+                            <React.Suspense fallback={<div>Loading...</div>}>
+                                <MobileSection
+                                    history={props.history}
+                                    isLight={isLight}
+                                    {...state}
+                                />
+                            </React.Suspense>
                         </SwipeableDrawer>
                         :
                         <Drawer
@@ -49,7 +66,9 @@ export const Component = ({
                             classes={{ paper: styl.drawerPaper }}
                         >
                             <div className={styl.toolbar} />
-                            <DrawerSections history={props.history} {...state} />
+                            <React.Suspense fallback={<div>Loading...</div>}>
+                                <DrawerSections history={props.history} {...state} />
+                            </React.Suspense>
                         </Drawer>
                 }
             </div>

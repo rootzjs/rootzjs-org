@@ -37,7 +37,8 @@ export const Styles = makeStyles(theme => ({
             }
       },
       logoTitle: {
-            height: "auto",
+            height: 22,
+            marginLeft: 4,
             marginBottom: 4,
             cursor: "pointer",
             [theme.breakpoints.up('sm')]: {

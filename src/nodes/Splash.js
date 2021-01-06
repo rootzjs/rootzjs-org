@@ -4,8 +4,12 @@ import { Component } from '../components/Splash';
 
 const [node, dispatchNode] = createNode("SplashPage", Component);
 
-node.useContract("AppDrawer", "DISABLE_DRAWER", {
-    isMenuOpen: false
-})
+node.state({
+    allContentLoaded: false
+});
 
-export const SplashPage = withRouter(dispatchNode(node));
+node.useAction("CONTENT_LOAD_COMPLETE", {
+    allContentLoaded: true
+});
+
+export default withRouter(dispatchNode(node));
