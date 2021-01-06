@@ -1,0 +1,2 @@
+(this["webpackJsonprootzjs-org"]=this["webpackJsonprootzjs-org"]||[]).push([[25],{178:function(o,s,t){"use strict";t.r(s),s.default=t.p+"static/media/logoDark.ebb39433.svg"}}]);
+//# sourceMappingURL=25.1fad3f2d.chunk.js.map

@@ -12,15 +12,6 @@ object-assign
  * @license MIT
  */
 
-/**
- * Prism: Lightweight, robust, elegant syntax highlighting
- *
- * @license MIT <https://opensource.org/licenses/MIT>
- * @author Lea Verou <https://lea.verou.me>
- * @namespace
- * @public
- */
-
 /** @license React v0.20.1
  * scheduler.production.min.js
  *
@@ -61,17 +52,6 @@ object-assign
  * react.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-/** @license RootzJs v2.0.21
- ** @author Trishanth Naidu
- ** @github https://github.com/rootzjs/core v2.0.20
- * react-jsx-dev-runtime.development.js
- * Copyright 2019 Trishanth Naidu
- * Copyright (c) Rootz Js,and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
