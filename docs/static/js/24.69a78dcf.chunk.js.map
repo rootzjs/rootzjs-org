@@ -1,1 +1,1 @@
-{"version":3,"sources":["assets/images/logo.svg"],"names":[],"mappings":"mHAAA,OAAe,cAA0B","file":"static/js/24.69a78dcf.chunk.js","sourcesContent":["export default __webpack_public_path__ + \"static/media/logo.ebb39433.svg\";"],"sourceRoot":""}
+{"version":3,"sources":["assets/images/logo.svg"],"names":[],"mappings":"mHAAA,OAAe,cAA0B","file":"./static/js/24.69a78dcf.chunk.js","sourcesContent":["export default __webpack_public_path__ + \"static/media/logo.ebb39433.svg\";"],"sourceRoot":""}

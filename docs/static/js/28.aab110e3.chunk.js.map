@@ -1,1 +1,1 @@
-{"version":3,"sources":["assets/images/titleDark.svg"],"names":[],"mappings":"mHAAA,OAAe,cAA0B","file":"static/js/28.aab110e3.chunk.js","sourcesContent":["export default __webpack_public_path__ + \"static/media/titleDark.31da1634.svg\";"],"sourceRoot":""}
+{"version":3,"sources":["assets/images/titleDark.svg"],"names":[],"mappings":"mHAAA,OAAe,cAA0B","file":"./static/js/28.aab110e3.chunk.js","sourcesContent":["export default __webpack_public_path__ + \"static/media/titleDark.31da1634.svg\";"],"sourceRoot":""}
