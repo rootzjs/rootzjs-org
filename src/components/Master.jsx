@@ -5,7 +5,7 @@ import { AppTheme } from '../theme/App';
 import { AppDrawer } from '../nodes/Drawer';
 import { AppHeader } from '../nodes/Header';
 // import { OopsSomethingWentWrong } from './Errors';
-import { Route, BrowserRouter as Router } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
 // IMPORT MODULES 
 import SplashPage from "../nodes/Splash";
@@ -37,112 +37,112 @@ const ComponentBody = props => {
                               config={props.config}
                         />
                         <AppDrawer theme={props.theme} />
-                        <Route
-                              exact
-                              path="/overview"
-                              component={() =>
-                                    <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                          <WorkbookSection theme={props.theme} />
-                                    </div>
-                              }
-                        />
-                        <Route
-                              exact
-                              path="/profile"
-                              component={() =>
-                                    <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                          <ProfileSection theme={props.theme} />
-                                    </div>
-                              }
-                        />
-                        <Route
-                              exact
-                              path="/contract"
-                              component={() =>
-                                    <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                          <ContractSection theme={props.theme} />
-                                    </div>
-                              }
-                        />
-                        <Route
-                              exact
-                              path="/actions"
-                              component={() =>
-                                    <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                          <ActionsSection theme={props.theme} />
-                                    </div>}
-                        />
-                        <Route
-                              exact
-                              path="/state"
-                              component={() =>
-                                    <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                          <StateSection theme={props.theme} />
-                                    </div>}
-                        />
-                        <Route
-                              exact
-                              path="/nodeprops"
-                              component={() =>
-                                    <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                          <NodePropsSection theme={props.theme} />
-                                    </div>}
-                        />
-                        <Route
-                              exact
-                              path="/node"
-                              component={() =>
-                                    <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                          <NodeSection theme={props.theme} />
-                                    </div>}
-                        />
-                        <Route
-                              exact
-                              path="/app-structure"
-                              component={() =>
-                                    <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                          <AppStructureSection theme={props.theme} />
-                                    </div>}
-                        />
-                        <Route
-                              exact
-                              path="/thinking-rootz"
-                              component={() =>
-                                    <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                          <ThinkingRootzSection theme={props.theme} />
-                                    </div>}
-                        />
-                        <Route
-                              exact
-                              path="/components"
-                              component={() =>
-                                    <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                          <ComponentsSection theme={props.theme} />
-                                    </div>}
-                        />
-                        <Route
-                              exact
-                              path="/introduction"
-                              component={() =>
-                                    <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                          <IntroductionSection theme={props.theme} />
-                                    </div>}
-                        />
-                        <Route
-                              exact
-                              path="/installation"
-                              component={() =>
-                                    <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                          <InstallationSection theme={props.theme} />
-                                    </div>}
-                        />
-                        <Route
-                              exact
-                              path="/"
-                              component={() =>
-                                    <SplashPage theme={props.theme} />
-                              }
-                        />
+                        <Switch>
+                              <Route
+                                    exact
+                                    path="/overview"
+                                    component={() =>
+                                          <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                                <WorkbookSection theme={props.theme} />
+                                          </div>
+                                    }
+                              />
+                              <Route
+                                    exact
+                                    path="/profile"
+                                    component={() =>
+                                          <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                                <ProfileSection theme={props.theme} />
+                                          </div>
+                                    }
+                              />
+                              <Route
+                                    exact
+                                    path="/contract"
+                                    component={() =>
+                                          <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                                <ContractSection theme={props.theme} />
+                                          </div>
+                                    }
+                              />
+                              <Route
+                                    exact
+                                    path="/actions"
+                                    component={() =>
+                                          <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                                <ActionsSection theme={props.theme} />
+                                          </div>}
+                              />
+                              <Route
+                                    exact
+                                    path="/state"
+                                    component={() =>
+                                          <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                                <StateSection theme={props.theme} />
+                                          </div>}
+                              />
+                              <Route
+                                    exact
+                                    path="/nodeprops"
+                                    component={() =>
+                                          <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                                <NodePropsSection theme={props.theme} />
+                                          </div>}
+                              />
+                              <Route
+                                    exact
+                                    path="/node"
+                                    component={() =>
+                                          <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                                <NodeSection theme={props.theme} />
+                                          </div>}
+                              />
+                              <Route
+                                    exact
+                                    path="/app-structure"
+                                    component={() =>
+                                          <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                                <AppStructureSection theme={props.theme} />
+                                          </div>}
+                              />
+                              <Route
+                                    exact
+                                    path="/thinking-rootz"
+                                    component={() =>
+                                          <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                                <ThinkingRootzSection theme={props.theme} />
+                                          </div>}
+                              />
+                              <Route
+                                    exact
+                                    path="/components"
+                                    component={() =>
+                                          <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                                <ComponentsSection theme={props.theme} />
+                                          </div>}
+                              />
+                              <Route
+                                    path="/introduction"
+                                    component={() =>
+                                          <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                                <IntroductionSection theme={props.theme} />
+                                          </div>}
+                              />
+                              <Route
+                                    path="/installation"
+                                    component={() =>
+                                          <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                                <InstallationSection theme={props.theme} />
+                                          </div>}
+                              />
+                              <Route
+                                    exact
+                                    path="/"
+                                    component={() =>
+                                          <SplashPage theme={props.theme} />
+                                    }
+                              />
+                        </Switch>
                         {/* {
                               !props.didSomethingWentWrong ?
                                     <React.Fragment></React.Fragment>

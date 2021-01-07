@@ -3,12 +3,14 @@ import { Component } from '../components/Master';
 import { getLangSupport } from '../lang';
 
 const [node, dispatchNode] = createNode("AppMaster", Component);
+const hours = new Date().getHours();
+const isDay = hours >= 6 && hours < 18;
 
 node.state({
-        theme: "dark",
         errorDetails: "",
         isAuthenticated: false,
         didSomethingWentWrong: false,
+        theme: isDay ? "light" : "dark",
 });
 
 // on Error
