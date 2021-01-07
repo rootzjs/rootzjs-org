@@ -1,6 +1,5 @@
 import React from 'react';
 import { Tooltip, useTheme } from '../Matlib';
-import Generators from '../assets/images/generators.svg';
 
 import { Styles } from '../styles/Splash';
 
@@ -14,7 +13,7 @@ export const Component = ({
     const Debug = React.useRef(null);
     const Container = React.useRef(null);
     const StrucFunc = React.useRef(null);
-    //const Generators = React.useRef(null);
+    const Generators = React.useRef(null);
     const RootzCopyright = React.useRef(null);
     const navigateToIntroduction = () => {
         props.history.push("/introduction");
@@ -25,7 +24,7 @@ export const Component = ({
                 Debug.current = (await import("../assets/images/debug.svg")).default;
                 Container.current = (await import("../assets/images/container.svg")).default;
                 StrucFunc.current = (await import("../assets/images/struc-func.svg")).default;
-                //Generators.current = (await import("../assets/images/generators.svg")).default;
+                Generators.current = (await import("../assets/images/generators.svg")).default;
                 RootzCopyright.current = (await import("../assets/images/rootz-logo-copyright.png")).default;
             }
             catch {
