@@ -91,15 +91,15 @@ export const Component = ({
                 <div className={styl.featureWrapper}>
                     <div className={styl.featureImgWrapper}>
                         {
-                            //(state.allContentLoaded && Generators.current) && (
-                            <img
-                                width="35vmin"
-                                height="30vmin"
-                                src={Generators}
-                                className={styl.featureImg}
-                                alt="Boilerplate Generators"
-                            />
-                            //)
+                            (state.allContentLoaded && Generators.current) && (
+                                <img
+                                    width="35vmin"
+                                    height="30vmin"
+                                    src={Generators.current}
+                                    className={styl.featureImg}
+                                    alt="Boilerplate Generators"
+                                />
+                            )
                         }
                     </div>
                     <div className={styl.featureTextWrapper}>
