@@ -122,6 +122,7 @@ const ComponentBody = props => {
                                           </div>}
                               />
                               <Route
+                                    exact
                                     path="/introduction"
                                     component={() =>
                                           <div id="masterPage" className={styl.playgroundMasterContainer}>
@@ -129,6 +130,7 @@ const ComponentBody = props => {
                                           </div>}
                               />
                               <Route
+                                    exact
                                     path="/installation"
                                     component={() =>
                                           <div id="masterPage" className={styl.playgroundMasterContainer}>

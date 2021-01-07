@@ -19,7 +19,7 @@ module.exports = {
         // the entry point of our app
         './src/index.jsx',
     ],
-    mode: "development",
+    mode: "production",
     module: {
         rules: [
             {

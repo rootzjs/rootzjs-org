@@ -4,7 +4,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 module.exports = (env, options) => {
     return {
         entry: ['@babel/polyfill', './src/index.jsx'],
-        mode: "production",
+        mode: "development",
         module: {
             rules: [
                 {
