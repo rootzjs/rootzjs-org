@@ -144,6 +144,9 @@ const ComponentBody = props => {
                                           <SplashPage theme={props.theme} />
                                     }
                               />
+                              <Route component={() => 
+                                    <IntroductionSection theme={props.theme} />} 
+                              />
                         </Switch>
                         {/* {
                               !props.didSomethingWentWrong ?
