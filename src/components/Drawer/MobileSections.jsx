@@ -26,7 +26,11 @@ export const Component = ({
                 <div className={styl.drawerMobileContainer} role="presentation">
                         <div className={styl.logoSectionDrawer}>
                                 <div className={styl.logoContainer}>
-                                        <IconButton className={styl.iconContainer} disabled>
+                                        <IconButton 
+                                                disabled
+                                                className={styl.iconContainer} 
+                                                onClick={() => props.history.push("/")}
+                                        >
                                                 <img
                                                         alt="logo"
                                                         className={styl.logo}
