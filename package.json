@@ -17,7 +17,8 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "eject": "react-scripts eject",
-        "serve": "webpack serve --config webpack.dev.js --open --watch"
+        "serve": "webpack serve --config webpack.dev.js --open --watch",
+        "pack": "webpack --config webpack.prod.js"
     },
     "eslintConfig": {
         "extends": [
@@ -51,8 +52,8 @@
         "react-syntax-highlighter": "^15.4.3",
         "svg-url-loader": "^7.1.1",
         "terser-webpack-plugin": "^5.0.3",
-        "webpack": "4.44.2",
+        "webpack": "^5.11.1",
         "webpack-cli": "^4.3.1",
-        "webpack-dev-server": "3.11.0"
+        "webpack-dev-server": "^3.11.1"
     }
 }

@@ -1,2 +1,0 @@
-(this["webpackJsonprootzjs-org"]=this["webpackJsonprootzjs-org"]||[]).push([[28],{179:function(t,s,o){"use strict";o.r(s),s.default=o.p+"rootzjs-org/static/media/titleDark.31da1634.svg"}}]);
-//# sourceMappingURL=28.aab110e3.chunk.js.map
