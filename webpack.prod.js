@@ -1,10 +1,9 @@
-const webpack = require('webpack');
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = (env, options) => {
     return {
-        entry: './src/index.jsx',
+        entry: ['./src/index.jsx'],
         mode: "production",
         module: {
             rules: [
