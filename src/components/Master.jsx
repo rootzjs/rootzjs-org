@@ -5,7 +5,7 @@ import { AppTheme } from '../theme/App';
 import { AppDrawer } from '../nodes/Drawer';
 import { AppHeader } from '../nodes/Header';
 // import { OopsSomethingWentWrong } from './Errors';
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Switch, HashRouter } from 'react-router-dom';
 
 // IMPORT MODULES 
 import SplashPage from "../nodes/Splash";
@@ -28,7 +28,7 @@ import { Styles } from '../styles/Master';
 const ComponentBody = props => {
       const styl = Styles();
       return (
-            <Router>
+            <HashRouter>
                   <div className={styl.root} >
                         <CssBaseline />
                         <AppHeader
@@ -160,7 +160,7 @@ const ComponentBody = props => {
                                     />
                         } */}
                   </div>
-            </Router >
+            </HashRouter>
       );
 }
 

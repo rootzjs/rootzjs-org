@@ -4,7 +4,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 module.exports = (env, options) => {
     return {
         entry: ['@babel/polyfill', './src/index.jsx'],
-        mode: "development",
+        mode: "production",
         module: {
             rules: [
                 {
@@ -63,7 +63,7 @@ module.exports = (env, options) => {
         },
         output: {
             path: path.resolve(__dirname, 'docs'),
-            publicPath: '/',
+            publicPath: 'https://rootzjs.org/',
             filename: 'bundle.js',
             libraryTarget: 'umd',
             umdNamedDefine: true,
