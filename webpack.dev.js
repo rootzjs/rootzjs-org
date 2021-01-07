@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     entry: [
@@ -20,7 +19,7 @@ module.exports = {
         // the entry point of our app
         './src/index.jsx',
     ],
-    mode: "production",
+    mode: "development",
     module: {
         rules: [
             {
@@ -101,7 +100,6 @@ module.exports = {
         // enable HMR on the server
     },
     optimization: {
-        minimize: true,
-        minimizer: [new TerserPlugin]
+        minimize: false,
     }
 }

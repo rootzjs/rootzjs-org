@@ -52,6 +52,8 @@
         "@material-ui/styles": "^4.4.3",
         "babel-core": "^6.26.3",
         "babel-loader": "^8.2.2",
+        "babel-polyfill": "^6.26.0",
+        "html-webpack-plugin": "^4.5.1",
         "react-hot-loader": "^4.13.0",
         "react-router-dom": "^5.1.2",
         "react-router-hash-link": "^2.3.1",

@@ -44,32 +44,32 @@ export const Component = ({
             <div className={styl.root}>
                 {
                     theme.isMobile ?
-                        <SwipeableDrawer
-                            className={styl.drawer}
-                            open={state.isMenuOpen}
-                            onOpen={actions.ON_MENU_OPEN}
-                            onClose={actions.ON_MENU_CLOSE}
-                            classes={{ paper: styl.drawerPaperMobile }}
-                        >
-                            <React.Suspense fallback={<div>Loading...</div>}>
+                        <React.Suspense fallback={<div>Loading...</div>}>
+                            <SwipeableDrawer
+                                className={styl.drawer}
+                                open={state.isMenuOpen}
+                                onOpen={actions.ON_MENU_OPEN}
+                                onClose={actions.ON_MENU_CLOSE}
+                                classes={{ paper: styl.drawerPaperMobile }}
+                            >
                                 <MobileSection
                                     history={props.history}
                                     isLight={isLight}
                                     {...state}
                                 />
-                            </React.Suspense>
-                        </SwipeableDrawer>
+                            </SwipeableDrawer>
+                        </React.Suspense>
                         :
-                        <Drawer
-                            variant="permanent"
-                            className={styl.drawer}
-                            classes={{ paper: styl.drawerPaper }}
-                        >
-                            <div className={styl.toolbar} />
-                            <React.Suspense fallback={<div>Loading...</div>}>
+                        <React.Suspense fallback={<div>Loading...</div>}>
+                            <Drawer
+                                variant="permanent"
+                                className={styl.drawer}
+                                classes={{ paper: styl.drawerPaper }}
+                            >
+                                <div className={styl.toolbar} />
                                 <DrawerSections history={props.history} {...state} />
-                            </React.Suspense>
-                        </Drawer>
+                            </Drawer>
+                        </React.Suspense>
                 }
             </div>
         );
