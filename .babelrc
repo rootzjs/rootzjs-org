@@ -4,12 +4,7 @@
         "@babel/preset-react"
     ],
     "plugins": [
-        [
-            "@babel/transform-runtime",
-            {
-                "corejs": 3
-            }
-        ],
+        "@babel/transform-runtime",
         "@babel/plugin-transform-react-jsx",
         "@babel/plugin-syntax-dynamic-import",
         "@babel/plugin-proposal-class-properties",
