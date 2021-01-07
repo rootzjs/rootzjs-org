@@ -5,11 +5,11 @@ import {
     SwipeableDrawer,
 } from '../../Matlib';
 
+import DrawerSections from '../../nodes/Drawer/Sections';
+import MobileSection from '../../nodes/Drawer/MobileSection';
+
 // styles
 import { Styles } from '../../styles/AppDrawer';
-
-const DrawerSections = React.lazy(() => import('../../nodes/Drawer/Sections'));
-const MobileSection = React.lazy(() => import('../../nodes/Drawer/MobileSection'));
 
 export const Component = ({
     props,
@@ -44,32 +44,28 @@ export const Component = ({
             <div className={styl.root}>
                 {
                     theme.isMobile ?
-                        <React.Suspense fallback={<div>Loading...</div>}>
-                            <SwipeableDrawer
-                                className={styl.drawer}
-                                open={state.isMenuOpen}
-                                onOpen={actions.ON_MENU_OPEN}
-                                onClose={actions.ON_MENU_CLOSE}
-                                classes={{ paper: styl.drawerPaperMobile }}
-                            >
-                                <MobileSection
-                                    history={props.history}
-                                    isLight={isLight}
-                                    {...state}
-                                />
-                            </SwipeableDrawer>
-                        </React.Suspense>
+                        <SwipeableDrawer
+                            className={styl.drawer}
+                            open={state.isMenuOpen}
+                            onOpen={actions.ON_MENU_OPEN}
+                            onClose={actions.ON_MENU_CLOSE}
+                            classes={{ paper: styl.drawerPaperMobile }}
+                        >
+                            <MobileSection
+                                history={props.history}
+                                isLight={isLight}
+                                {...state}
+                            />
+                        </SwipeableDrawer>
                         :
-                        <React.Suspense fallback={<div>Loading...</div>}>
-                            <Drawer
-                                variant="permanent"
-                                className={styl.drawer}
-                                classes={{ paper: styl.drawerPaper }}
-                            >
-                                <div className={styl.toolbar} />
-                                <DrawerSections history={props.history} {...state} />
-                            </Drawer>
-                        </React.Suspense>
+                        <Drawer
+                            variant="permanent"
+                            className={styl.drawer}
+                            classes={{ paper: styl.drawerPaper }}
+                        >
+                            <div className={styl.toolbar} />
+                            <DrawerSections history={props.history} {...state} />
+                        </Drawer>
                 }
             </div>
         );
