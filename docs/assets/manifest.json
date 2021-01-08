@@ -1,6 +1,6 @@
 {
-  "short_name": "React-Rootz App",
-  "name": "Create React-Rootz App Sample",
+  "short_name": "Rootz JS",
+  "name": "Rootz JS - A centralized state management tool for React apps. | Rootz JS",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,14 +8,14 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo-avg.png",
+      "src": "thumb-192.png",
       "type": "image/png",
-      "sizes": "192x152"
+      "sizes": "192x192"
     },
     {
-      "src": "logo-lar.png",
+      "src": "thumb-512.png",
       "type": "image/png",
-      "sizes": "512x404"
+      "sizes": "512x511"
     }
   ],
   "start_url": ".",

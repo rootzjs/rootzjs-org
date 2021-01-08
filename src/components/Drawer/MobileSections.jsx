@@ -21,7 +21,7 @@ export const Component = ({
 }) => {
         const styl = Styles();
         const { isLight } = props;
-debugger;
+
         return (
                 <div className={styl.drawerMobileContainer} role="presentation">
                         <div className={styl.logoSectionDrawer}>

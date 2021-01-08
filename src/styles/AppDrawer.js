@@ -119,6 +119,10 @@ export const Styles = makeStyles(theme => ({
       iconContainer: {
             padding: "2px 0 1px 0",
             color: theme.text[10],
+
+            "& svg": {
+                  color: theme.text[20]
+            }
       },
       title: {
             display: "inline-flex",
