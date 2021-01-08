@@ -16,6 +16,7 @@ export const Component = ({
     const Generators = React.useRef(null);
     const RootzCopyright = React.useRef(null);
     const navigateToIntroduction = () => {
+        actions.KEEP_DRAWER_CLOSED();
         props.history.push("/introduction");
     }
     React.useEffect(() => {

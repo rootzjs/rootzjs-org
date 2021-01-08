@@ -12,4 +12,6 @@ node.useAction("CONTENT_LOAD_COMPLETE", {
     allContentLoaded: true
 });
 
+node.useContract("AppDrawer", "KEEP_DRAWER_CLOSED", { isMenuOpen: false })
+
 export default withRouter(dispatchNode(node));

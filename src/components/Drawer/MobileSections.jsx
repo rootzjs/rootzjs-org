@@ -21,13 +21,12 @@ export const Component = ({
 }) => {
         const styl = Styles();
         const { isLight } = props;
-
+debugger;
         return (
                 <div className={styl.drawerMobileContainer} role="presentation">
                         <div className={styl.logoSectionDrawer}>
                                 <div className={styl.logoContainer}>
                                         <IconButton 
-                                                disabled
                                                 className={styl.iconContainer} 
                                                 onClick={() => props.history.push("/")}
                                         >

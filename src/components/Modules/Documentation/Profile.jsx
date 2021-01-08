@@ -37,7 +37,7 @@ export const Component = ({
             <div id="actions" className={styl.pageTitle}>Profile</div>
             <Typography variant="body1" gutterBottom>Profile is similar to the concept of <b>Bus</b> in Networks. It helps you to store application specific generic data which could be accessible at any point within the application execution.</Typography>
             <Typography variant="body1" gutterBottom>Profile provides simple <code>getters</code> and <code>setters</code> to set and retrieve the data. You can compare it to the concept of <code>context</code> in React, with a little more advantage of having it centrally stored and managed.</Typography>
-            <HashLink id="set-profile" className={styl.contentTitle}>Set <code>Anywhere</code> access <code>Everywhere</code></HashLink>
+            <HashLink id="set-profile" className={styl.contentTitle}>Set Anywhere access Everywhere</HashLink>
             <Typography variant="body1" gutterBottom>There are two ways you could set a Profile. One, by simply calling the <SelfLink name="node.setProfile" route="/node" mask="Node" id="node-setprofile" /> within a Node. Secondly by importing the <code>setProfile</code> from library.</Typography>
             <HashLink id="from-node" className={styl.contentSubTitle}>From Node</HashLink>
             <CodeBlock

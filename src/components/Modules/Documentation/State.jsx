@@ -21,7 +21,7 @@ export const Component = ({
             <NoteBlock content="This provides you a perception of creating state for individual Nodes like in flux architechture, but is rather stored and managed centrally. This provides user to focus on defining the state of individual Nodes at a time, based on its own contribution to the application's behavior. And in case of debugging it makes it easy for the user to identify the change in state of a Node than rectifying the entire application." type="info" />
             <HashLink id="state-container" className={styl.contentTitle}>State Container</HashLink>
             <Typography variant="body1" gutterBottom>State Container is where the entire state of the application is stored and maintained. Users can view the current state of the application at any time by accessing the state container Object. This Object is <code>read-only</code> in nature. The state container object can be accessed by <code>getAllNodes</code> method.</Typography>
-            <HashLink id="using-getallnodes" className={styl.contentSubTitle}>Using <code>getAllNodes</code></HashLink>
+            <HashLink id="using-getallnodes" className={styl.contentSubTitle}>Using getAllNodes</HashLink>
             <CodeBlock
                 lang="javascript"
                 isLight={isLight}
@@ -50,7 +50,7 @@ export const Component = ({
             />
             <HashLink id="updating-state" className={styl.contentTitle}>Updating State</HashLink>
             <Typography variant="body1" gutterBottom>The state container enqueues the changes to the node state and tells React that the components within this node and it's children needs to be re-rendered with the updated state. The state container uses react state <code>updater</code> for any updates to be carried out thoughout the application. The Roots Layer smartly handles the state of each Nodes within the state container and on request for state update, enqueues the requested change to the react state <code>updater</code>.</Typography>
-            <HashLink id="always-use-actions-tu-update-state" className={styl.contentSubTitle}>Always use <code>Actions</code> to update state</HashLink>
+            <HashLink id="always-use-actions-tu-update-state" className={styl.contentSubTitle}>Always use Actions to update state</HashLink>
             <Typography variant="body1" gutterBottom>You can think of actions as a smart messenger which computes the logical body defined and requests the state container to update the state of the Node. That makes it mandatory to update the state through actions only.</Typography>
             <CodeBlock
                 lang="javascript"

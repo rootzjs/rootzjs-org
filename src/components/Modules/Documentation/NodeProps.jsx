@@ -62,7 +62,7 @@ export const Component = ({
                 isLight={isLight}
                 codeString={showMessageUseEffect}
             />
-            <Typography variant="body1" gutterBottom>Accessing any NodeProps from within <code>useEffect</code> would be similar to accessing it from other part of the components.</Typography>
+            <Typography variant="body1" gutterBottom>Accessing any NodeProps from within useEffect would be similar to accessing it from other part of the components.</Typography>
             <HashLink id="composing-components-with-nodeprops" className={styl.contentSubTitle}>Composing Components with NodeProps</HashLink>
             <Typography variant="body1" gutterBottom> NodeProps can also be accessed from outside the component. But for such scenarios you would need to pass it as a parameter. Consider this example where actions are to be called from another function which resides outside component scope <i>(Composing Components)</i>.</Typography>
             <CodeBlock

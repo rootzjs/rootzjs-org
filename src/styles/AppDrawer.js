@@ -132,8 +132,24 @@ export const Styles = makeStyles(theme => ({
             flex: 1
       },
       logo: {
-            height: theme.isMobile ? 35 : 20,
-            display: 'inline-flex',
+            height: 35,
+            marginRight: 5,
+            cursor: "pointer",
+            [theme.breakpoints.up('sm')]: {
+                  display: 'block',
+            },
+
+            "& svg": {
+                  color: theme.text[50],
+            }
+      },
+      logoTitle: {
+            height: 25,
+            marginLeft: 4,
+            cursor: "pointer",
+            [theme.breakpoints.up('sm')]: {
+                  display: 'block',
+            },
 
             "& svg": {
                   color: theme.text[50],
