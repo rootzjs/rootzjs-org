@@ -25,6 +25,16 @@ import ThinkingRootzSection from "../nodes/Modules/Documentation/ThinkingRootz";
 // IMPORT STYLES
 import { Styles } from '../styles/Master';
 
+const postPageTags = (route = "home") => {
+      const gtag = window.gtag || null;
+
+      if (gtag) {
+            gtag('event', 'screen_view', {
+                  'app_name': 'rootzjs',
+                  'screen_name': route
+            });
+      }
+}
 const ComponentBody = props => {
       const styl = Styles();
       return (
@@ -41,111 +51,149 @@ const ComponentBody = props => {
                               <Route
                                     exact
                                     path="/overview"
-                                    component={() =>
-                                          <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                                <WorkbookSection theme={props.theme} />
-                                          </div>
-                                    }
+                                    component={() => {
+                                          postPageTags("overview");
+                                          return (
+                                                <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                                      <WorkbookSection theme={props.theme} />
+                                                </div>)
+                                    }}
                               />
                               <Route
                                     exact
                                     path="/profile"
-                                    component={() =>
-                                          <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                                <ProfileSection theme={props.theme} />
-                                          </div>
-                                    }
+                                    component={() => {
+                                          postPageTags("profile");
+                                          return (
+                                                <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                                      <ProfileSection theme={props.theme} />
+                                                </div>)
+                                    }}
                               />
                               <Route
                                     exact
                                     path="/contract"
-                                    component={() =>
-                                          <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                                <ContractSection theme={props.theme} />
-                                          </div>
-                                    }
+                                    component={() => {
+                                          postPageTags("contract");
+                                          return (
+                                                <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                                      <ContractSection theme={props.theme} />
+                                                </div>)
+                                    }}
                               />
                               <Route
                                     exact
                                     path="/actions"
-                                    component={() =>
-                                          <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                                <ActionsSection theme={props.theme} />
-                                          </div>}
+                                    component={() => {
+                                          postPageTags("actions");
+                                          return (
+                                                <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                                      <ActionsSection theme={props.theme} />
+                                                </div>)
+                                    }}
                               />
                               <Route
                                     exact
                                     path="/state"
-                                    component={() =>
-                                          <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                                <StateSection theme={props.theme} />
-                                          </div>}
+                                    component={() => {
+                                          postPageTags("state");
+                                          return (
+                                                <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                                      <StateSection theme={props.theme} />
+                                                </div>)
+                                    }}
                               />
                               <Route
                                     exact
                                     path="/nodeprops"
-                                    component={() =>
-                                          <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                                <NodePropsSection theme={props.theme} />
-                                          </div>}
+                                    component={() => {
+                                          postPageTags("nodeprops");
+                                          return (
+                                                <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                                      <NodePropsSection theme={props.theme} />
+                                                </div>)
+                                    }}
                               />
                               <Route
                                     exact
                                     path="/node"
-                                    component={() =>
-                                          <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                                <NodeSection theme={props.theme} />
-                                          </div>}
+                                    component={() => {
+                                          postPageTags("node");
+                                          return (
+                                                <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                                      <NodeSection theme={props.theme} />
+                                                </div>)
+                                    }}
                               />
                               <Route
                                     exact
                                     path="/app-structure"
-                                    component={() =>
-                                          <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                                <AppStructureSection theme={props.theme} />
-                                          </div>}
+                                    component={() => {
+                                          postPageTags("app-structure");
+                                          return (
+                                                <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                                      <AppStructureSection theme={props.theme} />
+                                                </div>)
+                                    }}
                               />
                               <Route
                                     exact
                                     path="/thinking-rootz"
-                                    component={() =>
-                                          <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                                <ThinkingRootzSection theme={props.theme} />
-                                          </div>}
+                                    component={() => {
+                                          postPageTags("thinking-rootz");
+                                          return (
+                                                <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                                      <ThinkingRootzSection theme={props.theme} />
+                                                </div>)
+                                    }}
                               />
                               <Route
                                     exact
                                     path="/components"
-                                    component={() =>
-                                          <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                                <ComponentsSection theme={props.theme} />
-                                          </div>}
+                                    component={() => {
+                                          postPageTags("components");
+                                          return (
+                                                <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                                      <ComponentsSection theme={props.theme} />
+                                                </div>
+                                          )
+                                    }}
                               />
                               <Route
                                     exact
                                     path="/introduction"
-                                    component={() =>
-                                          <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                                <IntroductionSection theme={props.theme} />
-                                          </div>}
+                                    component={() => {
+                                          postPageTags("introduction");
+                                          return (
+                                                <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                                      <IntroductionSection theme={props.theme} />
+                                                </div>
+                                          )
+                                    }}
                               />
                               <Route
                                     exact
                                     path="/installation"
-                                    component={() =>
-                                          <div id="masterPage" className={styl.playgroundMasterContainer}>
-                                                <InstallationSection theme={props.theme} />
-                                          </div>}
+                                    component={() => {
+                                          postPageTags("installation");
+                                          return (
+                                                <div id="masterPage" className={styl.playgroundMasterContainer}>
+                                                      <InstallationSection theme={props.theme} />
+                                                </div>)
+                                    }}
                               />
                               <Route
                                     exact
                                     path="/"
-                                    component={() =>
-                                          <SplashPage theme={props.theme} />
-                                    }
+                                    component={() => {
+                                          postPageTags("home");
+                                          return (
+                                                <SplashPage theme={props.theme} />
+                                          )
+                                    }}
                               />
-                              <Route component={() => 
-                                    <IntroductionSection theme={props.theme} />} 
+                              <Route component={() =>
+                                    <IntroductionSection theme={props.theme} />}
                               />
                         </Switch>
                         {/* {
@@ -168,7 +216,6 @@ export const Component = ({
       props,
       state,
 }) => {
-
       // React.useEffect(() => {
       //       windowErrorHandler(actions.ON_ERROR_OCCURED);
       // }, [actions.ON_ERROR_OCCURED]);
