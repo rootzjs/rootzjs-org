@@ -9,7 +9,7 @@ export const Component = ({
 }) => {
     const styl = Styles();
     const { children, ...rest } = props;
-    const path = window.location.pathname;
+    const path = window.location.href.split("#")[1];
 
     return (
         <div className={styl.hasLinkContainer}>

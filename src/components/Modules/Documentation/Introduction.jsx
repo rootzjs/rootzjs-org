@@ -19,8 +19,8 @@ export const Component = ({
                 <div className={styl.root}>
                         <div id="introduction" className={styl.pageTitle}>{profile.INTRO.title}</div>
                         <Typography variant="body1" gutterBottom>{profile.INTRO.subText1}</Typography>
-                        <Typography variant="body1" gutterBottom>Rootz shadows most of the functionalities and provides access to only those which are required for handling the state. This makes it easier for the user to rapidly build complex applications with lesser Lines Of Code <i>(LOC)</i>. Rootz smartly skips the boilerplates code by predefining them during the creation of <SelfLink name="Nodes" route="/nodes" id="create-a-node" />, which otherwise the user may end up writing. This increases the LOC to the functionality ratio without compromising the code quality and complexity. </Typography>
-                        <Typography variant="body1" gutterBottom>It follows a  <Link name="structural-functional" url="https://en.wikipedia.org/wiki/Structural_functionalism" /> paradigm, which sees your application as a set of Nodes interconnected through definitive set of actions, defined during the application building process. Each action defines the change of state of the Node. All the Nodes abide by these actions resulting into expected application's behavior.</Typography>
+                        <Typography variant="body1" gutterBottom>Rootz shadows most of the functionalities and provides access to only those which are required for handling the state. This makes it easier for the user to rapidly build complex applications with lesser Lines Of Code <i>(LOC)</i>. Rootz smartly skips the boilerplate code by predefining them during the creation of <SelfLink name="Nodes" route="/nodes" id="create-a-node" />(Not to be confused with Node JS), which otherwise the user may end up writing. This increases the LOC to the functionality ratio without compromising the code quality and complexity. </Typography>
+                        <Typography variant="body1" gutterBottom>It follows a  <Link name="structural-functional" url="https://en.wikipedia.org/wiki/Structural_functionalism" /> paradigm, which sees your application as a set of Nodes interconnected through definitive set of actions, defined during the application building process. Each action defines the change of state of the Node. All the Nodes abide by these actions resulting into <SelfLink name="expected application's behavior" route="/thinking-rootz" mask="ThinkingRootz" id="rootz-anatomy" />.</Typography>
                         <Typography variant="body1" gutterBottom>This makes it easy to manage the state of your application. Rootz is just over <Link name="2kb" url="https://www.npmjs.com/package/@rootzjs/core" />, including dependencies. By this, it is not only light on your pocket, but also helps in solving application's structural complexities for maintaining state.</Typography>
                         <Typography variant="body1" gutterBottom></Typography>
                         <HashLink id="create-a-react-rootz-app" className={styl.contentTitle}>Create a React-Rootz App</HashLink>
@@ -43,16 +43,18 @@ export const Component = ({
                                 codeString={yarAddRootzString}
                         />
                         <HashLink id="why-rootz" className={styl.contentTitle}>Why Rootz?</HashLink>
-                        <Typography variant="body1" gutterBottom>Rootz, provides a definitive structure to your application and its state, by which you achieve better lines of code (LOC) to behavior ratio. This helps you to achieve expected behavior of your application with minimal LOC. </Typography>
+                        <Typography variant="body1" gutterBottom>Rootz, provides a definitive <SelfLink name="structure to your application" route="/node" mask="Node" id="structure-to-your-application" /> and its state, by which you achieve better lines of code (LOC) to behavior ratio. This helps you to achieve expected behavior of your application with minimal LOC. </Typography>
                         <Typography variant="body1" gutterBottom>The behavior of the application is contributed by the
                                 <SelfLink
                                         name="State"
                                         route="/state"
+                                        id="centralized-state-of-application"
                                 />
                         and the
                                 <SelfLink
                                         name="Actions"
                                         route="/actions"
+                                        id="actions-update-state"
                                 />
                         defined. States being a simple JavaScript object, while actions are result of built in boilerplate methods which concludes in ease of use with minimal learning curve.</Typography>
                         <HashLink id="when-to-use-rootz" className={styl.contentTitle}>When to use Rootz?</HashLink>
