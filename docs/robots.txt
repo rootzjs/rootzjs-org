@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: 
+
+Sitemap: https://rootzjs.org/sitemap.xml
+
+
+
